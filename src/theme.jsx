@@ -26,9 +26,10 @@ const theme = createTheme({
             default: '#2F1919'
         },
         primary: {
-            main: '#DC9778', // Peach Bellini
+            main: '#DC9777', // Peach Bellini
             second: '#5a2c36', // Peach Bellini
             third: '#59342E', // Peach Bellini
+            vibrant: '#FFBA7D', // Peach Bellini
         },
         accent: {
             main: '#5C5251',

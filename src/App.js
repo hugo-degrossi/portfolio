@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import theme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
 import {Typography} from "@mui/material";
@@ -6,6 +6,7 @@ import Hello from "./components/hello";
 import {makeStyles} from "@mui/styles";
 import logo from "./logo_kiwi.png"
 import NavBar from "./components/nav/navBar";
+import AboutMe from "./components/AboutMe";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -27,22 +28,38 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         top: '25px',
         left: '25px',
+    },
+    container: {
+        margin: '5vh 0 15vh 0'
     }
 }));
+
+
+
+
 function App() {
     const classes = useStyles();
 
+
+
     return (
-        <ThemeProvider theme={theme}>
-        <NavBar />
-        <div className={classes.root}>
-
-
-                        <Hello />
-
-        </div>
-        </ThemeProvider>
-
+        <>
+            <ThemeProvider theme={theme}>
+                <NavBar />
+                <div className={classes.root}>
+                    <Hello />
+                    <div className={classes.container}>
+                        <AboutMe />
+                    </div>
+                    <div className={classes.container}>
+                        <AboutMe />
+                    </div>
+                    <div className={classes.container}>
+                        <AboutMe />
+                    </div>
+                </div>
+            </ThemeProvider>
+        </>
   );
 }
 
