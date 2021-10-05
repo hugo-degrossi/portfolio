@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import {Typography} from "@mui/material";
 import AppBar from '@mui/material/AppBar';
-import logo from "../../logo_kiwi.png"
+import logo from "../../h.svg"
 import FadeInSection from "../fadeInSection";
 import {HashLink} from "react-router-hash-link";
 import {
@@ -11,18 +11,20 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import {ReactSVG} from "react-svg";
 
 
 const useStyles = makeStyles((theme) => ({
     navbar: {
-        background: theme.palette.background.default +  '!important',
+        background: 'transparent !important',
         padding: '30px 50px 30px 50px',
         boxShadow: 'none !important',
         display: 'flex',
         justifyContent: 'space-between',
         flexDirection: 'row !important',
-        alignItems: 'center'
-    },
+        alignItems: 'center',
+
+},
     links: {
         display: "flex",
         flexDirection: 'row',
@@ -45,6 +47,10 @@ const useStyles = makeStyles((theme) => ({
     },
     hashLink: {
         textDecoration: 'none'   /* no underline */
+    },
+    logo_box: {
+        width: '50px',
+        height: '50px',
     }
 }));
 
@@ -53,7 +59,7 @@ function NavBar() {
 
     return (
         <AppBar className={classes.navbar} position="static">
-            <img src={logo}  width="50" height="50"/>
+            <ReactSVG className={classes.logo_box} src={logo} />
             <ul className={classes.links}>
                 <Router>
                 <FadeInSection waitingTime={0}>
