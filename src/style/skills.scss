@@ -1,0 +1,53 @@
+@mixin white-gradient {
+  background: linear-gradient(to right,  rgba(47, 25, 25,1) 0%,rgba(47, 25, 25,0) 100%);
+}
+
+$animationSpeed: 15s;
+
+// Animation
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-80px * 11))}
+}
+
+
+// Styling
+.slider {
+  height: 50px;
+  overflow:hidden;
+  position: relative;
+  bottom: 0 - 10px;
+  opacity: 0.5;
+  width: 25vw;
+  &::before,
+  &::after {
+    @include white-gradient;
+    content: "";
+    height: 50px;
+    position: absolute;
+    width: 200px;
+    z-index: 2;
+  }
+
+  &::after {
+    right: 0;
+    top: 0;
+    transform: rotateZ(180deg);
+  }
+
+  &::before {
+    left: 0;
+    top: 0;
+  }
+
+  .slide-track {
+    animation: scroll $animationSpeed linear infinite;
+    display: flex;
+    width: calc(80px * 22);
+  }
+
+  .slide {
+    height: 30px;
+    width: 80px;
+  }
+}

@@ -56,9 +56,6 @@ function App() {
                     <div id={'experience'} className={classes.container}>
                         <Experience />
                     </div>
-                    <div id={'skills'} className={classes.container}>
-                        <Skills />
-                    </div>
                 </div>
             </ThemeProvider>
         </>

@@ -26,7 +26,10 @@ const useStyles = makeStyles((theme) => ({
     links: {
         display: "flex",
         flexDirection: 'row',
-        listStyle: 'none'
+        listStyle: 'none',
+        "@media (max-width: 1150px)": {
+            display: 'none',
+        },
     },
     link: {
         marginRight: '30px',
@@ -53,11 +56,6 @@ function NavBar() {
             <img src={logo}  width="50" height="50"/>
             <ul className={classes.links}>
                 <Router>
-
-
-
-
-
                 <FadeInSection waitingTime={0}>
                     <li className={classes.link}>
                         <HashLink smooth to="#aboutMe" className={classes.hashLink}>
@@ -74,22 +72,15 @@ function NavBar() {
                 </FadeInSection>
                 <FadeInSection waitingTime={500}>
                     <li className={classes.link}>
-                        <HashLink smooth to="#skills" className={classes.hashLink}>
-                            <span className={classes.number}>03.</span><span className={classes.text}>Skills.</span>
-                        </HashLink>
+                        <a><span className={classes.number}>04.</span><span className={classes.text}>My Projects.</span></a>
                     </li>
                 </FadeInSection>
                 <FadeInSection waitingTime={750}>
                     <li className={classes.link}>
-                        <a><span className={classes.number}>04.</span><span className={classes.text}>My Projects.</span></a>
-                    </li>
-                </FadeInSection>
-                <FadeInSection waitingTime={1000}>
-                    <li className={classes.link}>
                         <a><span className={classes.number}>05.</span><span className={classes.text}>Coding Challenge.</span></a>
                     </li>
                 </FadeInSection>
-                    <FadeInSection waitingTime={1250}>
+                    <FadeInSection waitingTime={1000}>
                     <li className={classes.link}>
                         <a><span className={classes.number}>06.</span><span className={classes.text}>Contact Me.</span></a>
                     </li>

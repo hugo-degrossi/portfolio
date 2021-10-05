@@ -4,8 +4,9 @@ import {Typography} from "@mui/material";
 import Typewriter from 'typewriter-effect';
 import FadeInSection from "../fadeInSection";
 import {Button} from "@mui/material";
+import Skills from "../skills/skills";
 
-const baseTimer = 1500
+const baseTimer = 1250
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -86,19 +87,35 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     actions: {
+        marginTop: '5vh !important',
         display: "flex",
         justifyContent: "flex-end",
-        width: '100%'
+        flexDirection: 'row',
+        flexWrap: "wrap",
+        width: '100%',
+        alignItems: "center"
+    },
+    center: {
+        display: "flex",
+        alignItems: "center",
+        flexDirection: 'row',
+        width: '100%',
+        height: '100%',
     },
     hire_me_btn: {
-        marginTop: '5vh !important',
         fontFamily: 'Segoe UI !important',
+        alignItems: "center"
     },
     download_resume_btn: {
-        marginTop: '5vh !important',
         fontFamily: 'Segoe UI !important',
-        marginRight: '25px !important'
+        marginRight: '25px !important',
+        alignItems: "center"
     },
+    skills: {
+        "@media (max-width: 1150px)": {
+            display: 'none',
+        },
+    }
 }));
 
 function Hello() {
@@ -147,21 +164,32 @@ function Hello() {
             </ FadeInSection>
 
             <div className={classes.actions}>
-                <FadeInSection waitingTime={baseTimer + 800}>
+                <div className={classes.skills}>
+                    <FadeInSection waitingTime={baseTimer + 800}>
+                        <Skills />
+                    </ FadeInSection>
+                </div>
 
-                    <Button className={classes.download_resume_btn} variant="contained">
-                        Check My Resume.
-                    </Button>
+                <FadeInSection waitingTime={baseTimer + 800}>
+                    <div className={classes.center}>
+                        <Button className={classes.download_resume_btn} variant="contained">
+                            Check My Resume.
+                        </Button>
+                    </div>
+
 
                 </ FadeInSection>
                 <FadeInSection waitingTime={baseTimer + 1200}>
+                    <div className={classes.center}>
+                        <Button className={classes.hire_me_btn} variant="contained">
+                            Hire me.
+                        </Button>
+                    </div>
 
-                    <Button className={classes.hire_me_btn} variant="contained">
-                        Hire me.
-                    </Button>
 
                 </ FadeInSection>
             </div>
+
 
         </div>
 

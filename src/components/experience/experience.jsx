@@ -114,6 +114,10 @@ const useStyles = makeStyles((theme) => ({
         textTransform: "uppercase",
         letterSpacing: '2px',
         textAlign: "end"
+    },
+    email: {
+        marginLeft: '5px',
+        fontStyle: 'italic'
     }
 }));
 
@@ -188,6 +192,15 @@ function Experience() {
                                     Design and develop a Intelligent Research / Deposit App for the Nuxeo DMS (Document Management System) using Django, the Nuxeo API, React, and PostgreSQL from scratch.<br/><br/>
                                     Design and develop a Blog / Wiki App using Django, React, and PostgreSQL from scratch.
                                     <p className={classes.tab_content_title}>REFERENCES</p>
+                                    <ul className={classes.references}>
+                                        <li className={classes.reference}>
+                                            Eric Louvel <span className={classes.email}>here-is-email@email.com</span>
+                                        </li>
+                                        <li>
+                                            France Schroter <span className={classes.email}>here-is-email@email.com</span>
+                                        </li>
+                                    </ul>
+
                                 </TabPanel>
                                 <TabPanel className={classes.tab_content} value={value} index={2}>
                                     <p className={classes.tab_content_title}>CORPORAL</p>

@@ -1,133 +1,76 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
+import "../../style/skills.scss"
+import { ReactSVG } from 'react-svg'
+import AngularLogo from '../../media/icons/angularjs-plain.svg'
+import JavaLogo from '../../media/icons/java-plain.svg'
+import JavascriptLogo from '../../media/icons/javascript-plain.svg'
+import CSharpLogo from '../../media/icons/csharp-plain.svg'
+import CLogo from '../../media/icons/c-plain.svg'
+import ReactLogo from '../../media/icons/react-original.svg'
+import DjangoLogo from '../../media/icons/django-plain.svg'
+import PhpLogo from '../../media/icons/php-plain.svg'
+import TypeScriptLogo from '../../media/icons/typescript-plain.svg'
+import PythonLogo from '../../media/icons/python-original.svg'
+import SymfonyLogo from '../../media/icons/symfony-original.svg'
+import RubyLogo from '../../media/icons/ruby-plain.svg'
+//import Logo from '../../media/icons/'
 
 const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        marginBottom: '20vh',
-        width: '100%',
-        padding: 0,
-        "@media (max-width: 1150px)": {
-            flexDirection: 'column',
-            justifyContent: 'center',
-        },
-    },
-    container: {
-        display: "flex",
-        flexDirection: "row",
-        width: '100%',
-        flexWrap: "wrap",
-        justifyContent: "space-between"
-    },
-    box: {
-        width: '100%',
-    },
-    title: {
-        marginBottom: '2px',
-        display: 'flex',
-        alignItems: "end",
-        justifyContent: 'center'
-    },
-    divider: {
-        display: 'flex',
-        justifyContent: 'flex-end',
-        height: '3px',
-        width: '95%',
-        backgroundColor: theme.palette.primary.main,
-        opacity: '0.1',
-        marginTop: '5px',
-        marginBottom: '15px',
-        "@media (max-width: 1150px)": {
-            width: '100%',
-        },
-    },
-    title_text: {
-        color: theme.palette.text.main,
-        fontSize: '1.8rem',
-        fontWeight: "bold",
-        letterSpacing: 0,
-        "@media (max-width: 1450px)": {
-            fontSize: '1.8rem',
-        },
-        "@media (max-width: 1150px)": {
-            fontSize: '1.6rem',
-        },
-        "@media (max-width: 950px)": {
-            fontSize: '1.4rem',
-        },
-        "@media (max-width: 800px)": {
-            fontSize: '1.2rem',
-        }
-    },
-    number: {
-        color: theme.palette.primary.vibrant,
-        fontSize: '1.4rem',
-        fontFamily: "monospace",
-        marginRight: '4px',
-        "@media (max-width: 1450px)": {
-            fontSize: '1.3rem',
-        },
-        "@media (max-width: 1150px)": {
-            fontSize: '1.2rem',
-            marginRight: '10px',
-        },
-        "@media (max-width: 950px)": {
-            fontSize: '1.1rem',
-        },
-        "@media (max-width: 800px)": {
-            fontSize: '1rem',
-        }
-    },
-    list_container: {
-        display: "flex",
-        flexDirection: "column",
-        flexBasis: '30%'
-    },
-    list_title: {
-        color: theme.palette.primary.vibrant + '!important',
-        opacity: '0.7 !important',
-        fontWeight: "bold",
-        textTransform: "uppercase",
-        letterSpacing: '2px',
-        marginBottom: '15px'
-    },
-    list: {
-        padding: 0,
-        margin: 0
-    },
-    list_item: {
-        color: theme.palette.text.main + '!important',
-        opacity: '0.7 !important',
-        letterSpacing: '1px',
-        listStyle: "none",
-        marginBottom: '2px',
-    },
-    list_item_title: {
-        color: theme.palette.primary.vibrant + '!important',
-        opacity: '0.4 !important',
-        letterSpacing: '1px',
-        listStyle: "none",
-        margin: '5px 0 5px 0',
-        fontWeight: 'bold',
+
+
+    skill_box:{
+        width: '30px',
+        height: '30px',
     }
+
 }));
+
+const skillSet = [
+    {name: 'React', icon: ReactLogo},
+    {name: 'Angular', icon: AngularLogo},
+    {name: 'Typescript', icon: TypeScriptLogo},
+    {name: 'Javascript', icon: JavascriptLogo},
+    {name: 'Python', icon: PythonLogo},
+    {name: 'Django', icon: DjangoLogo},
+    {name: 'Symfony', icon: SymfonyLogo},
+    {name: 'Ruby', icon: RubyLogo},
+    {name: 'C', icon: CLogo},
+    {name: 'C#', icon: CSharpLogo},
+    {name: 'Java', icon: JavaLogo},
+
+]
+
 
 function Skills() {
     const classes = useStyles();
 
     return (
-        <FadeInSection waitingTime={1500}>
-            <div className={classes.root}>
-                <div className={classes.box}>
-                    <div className={classes.title}>
-                        <span className={classes.number}>03. </ span>
-                        <span className={classes.title_text}>Skills</ span>
+                <div className="slider">
+                    <div className="slide-track">
+                        {skillSet.map((skill) => {
+                            return <div className="slide">
+                                <ReactSVG className={classes.skill_box} src={skill.icon} />
+                            </div>
+                        })}
+                        {skillSet.map((skill) => {
+                            return <div className="slide">
+                                <ReactSVG className={classes.skill_box} src={skill.icon} />
+                            </div>
+                        })}
                     </div>
-                    <div className={classes.divider} />
+                </div>
 
+
+    );
+}
+
+export default Skills;
+
+
+/*
+*
                     <div className={classes.container}>
                         <div className={classes.list_container}>
                             <div className={classes.list_title}>LANGUAGES</div>
@@ -162,12 +105,5 @@ function Skills() {
                             </ul>
                         </div>
                     </div>
-
-                </div>
-            </div>
-        </FadeInSection>
-
-    );
-}
-
-export default Skills;
+*
+* */

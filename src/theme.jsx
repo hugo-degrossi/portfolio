@@ -27,9 +27,9 @@ const theme = createTheme({
         },
         primary: {
             main: '#DC9777', // Peach Bellini
-            second: '#5a2c36', // Peach Bellini
-            third: '#59342E', // Peach Bellini
-            vibrant: '#FFBA7D', // Peach Bellini
+            second: '#5a2c36',
+            third: '#59342E',
+            vibrant: '#FFBA7D',
             contrastText: '#2F1919',
         },
         accent: {
@@ -49,7 +49,6 @@ const theme = createTheme({
             main: '#09FE00',//green
         },
         text: {
-            primary: '#FEDED1',
             main: '#FEDED1',
             secondary: '#7D5643',
 
