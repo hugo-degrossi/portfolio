@@ -2,7 +2,10 @@ import React from 'react';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import {Typography} from "@mui/material";
 import Typewriter from 'typewriter-effect';
-import FadeInSection from "./fadeInSection";
+import FadeInSection from "../fadeInSection";
+import {Button} from "@mui/material";
+
+const baseTimer = 1500
 
 const useStyles = makeStyles((theme) => ({
     container: {
@@ -64,6 +67,7 @@ const useStyles = makeStyles((theme) => ({
             fontSize: '1.5rem',
         }
     },
+
     description: {
         color: theme.palette.text.main,
         opacity: 0.55,
@@ -80,7 +84,21 @@ const useStyles = makeStyles((theme) => ({
             width: '100%',
             marginTop: '15px',
         }
-    }
+    },
+    actions: {
+        display: "flex",
+        justifyContent: "flex-end",
+        width: '100%'
+    },
+    hire_me_btn: {
+        marginTop: '5vh !important',
+        fontFamily: 'Segoe UI !important',
+    },
+    download_resume_btn: {
+        marginTop: '5vh !important',
+        fontFamily: 'Segoe UI !important',
+        marginRight: '25px !important'
+    },
 }));
 
 function Hello() {
@@ -88,9 +106,11 @@ function Hello() {
 
     return (
         <div className={classes.container}>
+
+
             <div className={classes.hello}>
 
-                <FadeInSection waitingTime={0}>
+                <FadeInSection waitingTime={baseTimer + 0}>
                     <Typewriter
 
                         onInit={(typewriter) => {
@@ -108,23 +128,40 @@ function Hello() {
                 </ FadeInSection>
 
             </div>
-            <FadeInSection waitingTime={100}>
+            <FadeInSection waitingTime={baseTimer + 100}>
             <div className={classes.name}>
                 Hugo De Grossi.
             </div>
             </ FadeInSection>
-            <FadeInSection waitingTime={250}>
+            <FadeInSection waitingTime={baseTimer + 250}>
             <div className={classes.title}>
                 4th Year IT Engineering student.
             </div>
             </ FadeInSection>
-            <FadeInSection waitingTime={500}>
+            <FadeInSection waitingTime={baseTimer + 500}>
             <div className={classes.description}>
                 Currently applying for an IT internship in the web developement sector, however, I
                 am open to any opportunity. The internship length is 19 weeks (from last week of
                 september 2021 to first week of february 2022).
             </div>
             </ FadeInSection>
+
+            <div className={classes.actions}>
+                <FadeInSection waitingTime={baseTimer + 800}>
+
+                    <Button className={classes.download_resume_btn} variant="contained">
+                        Check My Resume.
+                    </Button>
+
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 1200}>
+
+                    <Button className={classes.hire_me_btn} variant="contained">
+                        Hire me.
+                    </Button>
+
+                </ FadeInSection>
+            </div>
 
         </div>
 

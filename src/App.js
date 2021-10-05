@@ -2,11 +2,13 @@ import React, {useEffect, useState} from 'react';
 import theme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
 import {Typography} from "@mui/material";
-import Hello from "./components/hello";
+import Hello from "./components/home/hello";
 import {makeStyles} from "@mui/styles";
 import logo from "./logo_kiwi.png"
 import NavBar from "./components/nav/navBar";
-import AboutMe from "./components/AboutMe";
+import AboutMe from "./components/aboutMe/AboutMe";
+import Experience from "./components/experience/experience";
+import Skills from "./components/skills/skills";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -48,14 +50,14 @@ function App() {
                 <NavBar />
                 <div className={classes.root}>
                     <Hello />
-                    <div className={classes.container}>
+                    <div id={'aboutMe'} className={classes.container}>
                         <AboutMe />
                     </div>
-                    <div className={classes.container}>
-                        <AboutMe />
+                    <div id={'experience'} className={classes.container}>
+                        <Experience />
                     </div>
-                    <div className={classes.container}>
-                        <AboutMe />
+                    <div id={'skills'} className={classes.container}>
+                        <Skills />
                     </div>
                 </div>
             </ThemeProvider>
