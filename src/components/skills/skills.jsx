@@ -23,6 +23,7 @@ const useStyles = makeStyles((theme) => ({
     skill_box:{
         width: '30px',
         height: '30px',
+        filter:' invert(88%) sepia(912%) saturate(300%) hue-rotate(320deg) brightness(100%) contrast(55%)'
     }
 
 }));

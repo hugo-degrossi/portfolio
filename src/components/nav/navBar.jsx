@@ -59,36 +59,33 @@ function NavBar() {
 
     return (
         <AppBar className={classes.navbar} position="static">
-            <ReactSVG className={classes.logo_box} src={logo} />
+            <FadeInSection waitingTime={0}>
+                <ReactSVG className={classes.logo_box} src={logo} />
+            </FadeInSection>
             <ul className={classes.links}>
                 <Router>
-                <FadeInSection waitingTime={0}>
+                <FadeInSection waitingTime={500}>
                     <li className={classes.link}>
                         <HashLink smooth to="#aboutMe" className={classes.hashLink}>
                             <span className={classes.number}>01.</span><span className={classes.text}>About Me.</span>
                         </HashLink>
                     </li>
                 </FadeInSection>
-                <FadeInSection waitingTime={250}>
+                <FadeInSection waitingTime={750}>
                     <li className={classes.link}>
                         <HashLink smooth to="#experience" className={classes.hashLink}>
                             <span className={classes.number}>02.</span><span className={classes.text}>Work Experience.</span>
                         </HashLink>
                     </li>
                 </FadeInSection>
-                <FadeInSection waitingTime={500}>
+                <FadeInSection waitingTime={1000}>
                     <li className={classes.link}>
-                        <a><span className={classes.number}>04.</span><span className={classes.text}>My Projects.</span></a>
+                        <a><span className={classes.number}>03.</span><span className={classes.text}>My Projects.</span></a>
                     </li>
                 </FadeInSection>
-                <FadeInSection waitingTime={750}>
+                    <FadeInSection waitingTime={1250}>
                     <li className={classes.link}>
-                        <a><span className={classes.number}>05.</span><span className={classes.text}>Coding Challenge.</span></a>
-                    </li>
-                </FadeInSection>
-                    <FadeInSection waitingTime={1000}>
-                    <li className={classes.link}>
-                        <a><span className={classes.number}>06.</span><span className={classes.text}>Contact Me.</span></a>
+                        <a><span className={classes.number}>04.</span><span className={classes.text}>Contact Me.</span></a>
                     </li>
                 </FadeInSection>
                 </Router>

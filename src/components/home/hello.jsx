@@ -146,9 +146,9 @@ function Hello() {
 
             </div>
             <FadeInSection waitingTime={baseTimer + 100}>
-            <div className={classes.name}>
+            <h1 className={classes.name}>
                 Hugo De Grossi.
-            </div>
+            </h1>
             </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 250}>
             <div className={classes.title}>
