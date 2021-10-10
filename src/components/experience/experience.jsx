@@ -54,9 +54,9 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     number: {
-        color: theme.palette.primary.vibrant,
+        color: theme.palette.primary.main,
         fontSize: '1.4rem',
-        fontFamily: "monospace",
+        fontFamily: "consolas",
         marginRight: '10px',
         "@media (max-width: 1450px)": {
             fontSize: '1.3rem',
@@ -91,29 +91,31 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '15px',
     },
     highlighted: {
-        color: theme.palette.primary.vibrant,
+        color: theme.palette.primary.main,
         fontWeight: "bold"
     },
     tab_name: {
         fontFamily: 'Segoe UI !important',
         alignItems: "end !important",
-        fontSize: '1rem !important'
+        fontSize: '1rem !important',
+        fontWeight: "bold !important",
     },
     tab_content: {
         color: theme.palette.text.main + '!important',
         fontFamily: 'Segoe UI !important',
-        opacity: '0.7 !important',
         padding: '0 !important',
         marginRight: '40px !important',
         maxWidth: '50% !important'
     },
     tab_content_title: {
-        color: theme.palette.primary.vibrant + '!important',
-        opacity: '1 !important',
+        color: theme.palette.primary.main + '!important',
         fontWeight: "bold",
         textTransform: "uppercase",
         letterSpacing: '2px',
         textAlign: "end"
+    },
+    tab_content_text: {
+        opacity: 0.7
     },
     email: {
         marginLeft: '5px',
@@ -184,13 +186,13 @@ function Experience() {
                                 </Tabs>
                                 <TabPanel className={classes.tab_content} value={value} index={0}>
                                     <p className={classes.tab_content_title}>PROJECT MANAGER & DEVELOPER</p>
-                                    Toyota goes vroum vroum
+                                    <p className={classes.tab_content_text}>This is some text.</p>
                                     <p className={classes.tab_content_title}>REFERENCES</p>
                                 </TabPanel>
                                 <TabPanel className={classes.tab_content} value={value} index={1}>
                                     <p className={classes.tab_content_title}>FULL STACK DEVELOPER</p>
-                                    Design and develop a Intelligent Research / Deposit App for the Nuxeo DMS (Document Management System) using Django, the Nuxeo API, React, and PostgreSQL from scratch.<br/><br/>
-                                    Design and develop a Blog / Wiki App using Django, React, and PostgreSQL from scratch.
+                                    <p className={classes.tab_content_text}>Design and develop a Intelligent Research / Deposit App for the Nuxeo DMS (Document Management System) using Django, the Nuxeo API, React, and PostgreSQL from scratch.<br/><br/></p>
+                                    <p className={classes.tab_content_text}>Design and develop a Blog / Wiki App using Django, React, and PostgreSQL from scratch.</p>
                                     <p className={classes.tab_content_title}>REFERENCES</p>
                                     <ul className={classes.references}>
                                         <li className={classes.reference}>
@@ -204,7 +206,7 @@ function Experience() {
                                 </TabPanel>
                                 <TabPanel className={classes.tab_content} value={value} index={2}>
                                     <p className={classes.tab_content_title}>CORPORAL</p>
-                                    Currently Corporal at the 1st Infantry Regiment in Sarrebourg, I am leading 2 soldier, I'm in pass to  become Sergeant and lead a combat group of 8 soldier.
+                                    <p className={classes.tab_content_text}>Currently Corporal at the 1st Infantry Regiment in Sarrebourg, I am leading 2 soldier, I'm in pass to  become Sergeant and lead a combat group of 8 soldier.</p>
                                 </TabPanel>
                             </Box>
                         </div>

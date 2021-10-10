@@ -10,14 +10,14 @@ const baseTimer = 1250
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        margin: '25vh 0 0 0',
-        height: '65vh'
+        margin: '20vh 0 0 0',
+        minHeight: '65vh'
     },
     hello: {
         color: theme.palette.primary.main,
         fontSize: '1.4rem',
         marginBottom: '3px',
-        fontFamily: "monospace",
+        fontFamily: "consolas",
         "@media (max-width: 1450px)": {
             fontSize: '1.3rem',
         },
@@ -33,25 +33,27 @@ const useStyles = makeStyles((theme) => ({
     },
     name: {
         color: theme.palette.text.main,
-        fontSize: '3.8rem',
+        fontSize: '3.4rem',
         marginBottom: '5px',
         fontWeight: "bold",
+        display: "flex",
+        flexDirection: 'row',
         "@media (max-width: 1450px)": {
-            fontSize: '3.1rem',
+            fontSize: '2.7rem',
         },
         "@media (max-width: 1150px)": {
-            fontSize: '2.8rem',
+            fontSize: '2.4rem',
         },
         "@media (max-width: 950px)": {
-            fontSize: '2.2rem',
+            fontSize: '1.8rem',
         },
         "@media (max-width: 800px)": {
-            fontSize: '1.8rem',
+            fontSize: '1.5rem',
         }
     },
     title: {
         color: theme.palette.text.main,
-        opacity: 0.7,
+        opacity: 0.6,
         fontSize: '3.8rem',
         fontWeight: "bold",
         marginBottom: '2px',
@@ -71,7 +73,7 @@ const useStyles = makeStyles((theme) => ({
 
     description: {
         color: theme.palette.text.main,
-        opacity: 0.55,
+        opacity: 0.75,
         fontSize: '1rem',
         marginTop: '20px',
         width: '50%',
@@ -104,17 +106,29 @@ const useStyles = makeStyles((theme) => ({
     },
     hire_me_btn: {
         fontFamily: 'Segoe UI !important',
-        alignItems: "center"
+        alignItems: "center",
+        fontWeight: "bold !important"
     },
     download_resume_btn: {
         fontFamily: 'Segoe UI !important',
         marginRight: '25px !important',
-        alignItems: "center"
+        alignItems: "center",
+        fontWeight: "bold !important",
+        "@media (max-width: 1150px)": {
+            marginRight: '5px !important',
+        },
     },
     skills: {
+        width: '50%',
         "@media (max-width: 1150px)": {
             display: 'none',
         },
+    },
+    space: {
+        marginRight: '15px',
+        "@media (max-width: 800px)": {
+            marginRight: '5px',
+        }
     }
 }));
 
@@ -145,14 +159,49 @@ function Hello() {
                 </ FadeInSection>
 
             </div>
-            <FadeInSection waitingTime={baseTimer + 100}>
             <h1 className={classes.name}>
-                Hugo De Grossi.
+                <FadeInSection waitingTime={baseTimer + 100}>
+                    H
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 125}>
+                    u
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 150}>
+                    g
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 175}>
+                    o
+                    <span className={classes.space}/>
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 200}>
+                    D
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 225}>
+                    e
+                    <span className={classes.space}/>
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 250}>
+                    G
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 275}>
+                    r
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 300}>
+                    o
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 325}>
+                    s
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 350}>
+                    s
+                </ FadeInSection>
+                <FadeInSection waitingTime={baseTimer + 375}>
+                    i
+                </ FadeInSection>
             </h1>
-            </ FadeInSection>
-            <FadeInSection waitingTime={baseTimer + 250}>
+            <FadeInSection waitingTime={baseTimer + 400}>
             <div className={classes.title}>
-                4th Year IT Engineering student.
+                Computer Science Student.
             </div>
             </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 500}>
@@ -181,7 +230,7 @@ function Hello() {
                 </ FadeInSection>
                 <FadeInSection waitingTime={baseTimer + 1200}>
                     <div className={classes.center}>
-                        <Button className={classes.hire_me_btn} variant="contained">
+                        <Button className={classes.hire_me_btn} variant="outlined">
                             Hire me.
                         </Button>
                     </div>

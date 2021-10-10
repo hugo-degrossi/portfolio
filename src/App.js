@@ -9,6 +9,7 @@ import NavBar from "./components/nav/navBar";
 import AboutMe from "./components/aboutMe/AboutMe";
 import Experience from "./components/experience/experience";
 import Skills from "./components/skills/skills";
+import Projects from "./components/projects/projects";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -32,6 +33,7 @@ const useStyles = makeStyles((theme) => ({
         left: '25px',
     },
     container: {
+        display: 'block',
         margin: '5vh 0 15vh 0'
     },
 
@@ -50,12 +52,18 @@ function App() {
             <ThemeProvider theme={theme}>
                 <NavBar />
                 <div className={classes.root}>
-                    <Hello />
+                    <div id={'hello'} className={classes.container}>
+                        <Hello />
+                    </div>
                     <div id={'aboutMe'} className={classes.container}>
                         <AboutMe />
                     </div>
                     <div id={'experience'} className={classes.container}>
                         <Experience />
+                    </div>
+
+                    <div id={'projects'} className={classes.container}>
+                        <Projects />
                     </div>
                 </div>
             </ThemeProvider>

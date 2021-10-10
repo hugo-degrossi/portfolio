@@ -2,7 +2,7 @@ import React from 'react';
 import { ThemeProvider, makeStyles } from '@mui/styles';
 import {Typography} from "@mui/material";
 import AppBar from '@mui/material/AppBar';
-import logo from "../../h.svg"
+import logo from "../../h_logo.svg"
 import FadeInSection from "../fadeInSection";
 import {HashLink} from "react-router-hash-link";
 import {
@@ -42,7 +42,7 @@ const useStyles = makeStyles((theme) => ({
     },
     number: {
         color: theme.palette.primary.main,
-        fontFamily: "monospace",
+        fontFamily: "consolas",
         marginRight: '5px'
     },
     hashLink: {
@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     logo_box: {
         width: '50px',
         height: '50px',
+        filter: 'drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7))'
     }
 }));
 
