@@ -81,7 +81,9 @@ function NavBar() {
                 </FadeInSection>
                 <FadeInSection waitingTime={1000}>
                     <li className={classes.link}>
-                        <a><span className={classes.number}>03.</span><span className={classes.text}>My Projects.</span></a>
+                        <HashLink smooth to="#projects" className={classes.hashLink}>
+                            <span className={classes.number}>03.</span><span className={classes.text}>Projects.</span>
+                        </HashLink>
                     </li>
                 </FadeInSection>
                     <FadeInSection waitingTime={1250}>

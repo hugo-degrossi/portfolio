@@ -14,19 +14,18 @@ const useStyles = makeStyles((theme) => ({
         marginBottom: '20vh',
     },
     container: {
-        display: 'flex',
-        flexDirection: 'row',
+        display: "grid",
+        gap: "30px",
+        gridTemplateColumns: "1fr 1fr 1fr",
         justifyContent: 'space-between',
         "@media (max-width: 1150px)": {
-            flexDirection: 'column',
-            justifyContent: 'center',
+            gridTemplateColumns: "1fr",
         },
 
     },
     card_container: {
-        display: "flex",
         flexBasis: '33%',
-        flexWrap: 'wrap'
+        display: "inline-block"
     },
     divider: {
         display: 'flex',
