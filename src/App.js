@@ -10,6 +10,9 @@ import AboutMe from "./components/aboutMe/AboutMe";
 import Experience from "./components/experience/experience";
 import Skills from "./components/skills/skills";
 import Projects from "./components/projects/projects";
+import logo_animated from "./h_logo_animated_4.svg"
+import logo_static from "./h_logo_static.svg"
+import {ReactSVG} from "react-svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -36,6 +39,27 @@ const useStyles = makeStyles((theme) => ({
         display: 'block',
         margin: '5vh 0 15vh 0'
     },
+    root_loading: {
+        width: '100vw',
+        height: '100vh',
+        display: 'flex',
+        alignItems: "center",
+        justifyContent: "center"
+    },
+    logo_loading: {
+        width: '200px',
+        height: '200px',
+        filter: 'drop-shadow( 0px 0px 4px rgba(0, 0, 0, .7))',
+        opacity: '1',
+        transition: "all 1s"
+    },
+    logo_loading_op: {
+        width: '200px',
+        height: '200px',
+        filter: 'drop-shadow( 0px 0px 4px rgba(0, 0, 0, .7))',
+        transition: "all 1s",
+        opacity: '0',
+    },
 
 }));
 
@@ -45,6 +69,22 @@ const useStyles = makeStyles((theme) => ({
 function App() {
     const classes = useStyles();
 
+    const [loading, setLoading] = useState(true)
+    const [opacity, setOpacity] = useState(false)
+
+    setTimeout(() => {
+        setOpacity(true)
+    }, 2500);
+
+    setTimeout(() => {
+        setLoading(false)
+    }, 3500);
+
+    if (loading) {
+        return <div className={classes.root_loading}>
+                <img className={opacity ? classes.logo_loading_op : classes.logo_loading} src={logo_animated} />
+        </div>
+    }
 
 
     return (

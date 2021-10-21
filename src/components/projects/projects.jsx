@@ -92,7 +92,6 @@ export default function Projects() {
 
     return (
         <>
-
             <FadeInSection waitingTime={1500}>
                 <div className={classes.root}>
                     <div className={classes.title}>

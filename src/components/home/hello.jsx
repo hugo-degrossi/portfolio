@@ -53,12 +53,13 @@ const useStyles = makeStyles((theme) => ({
     },
     title: {
         color: theme.palette.text.main,
-        opacity: 0.6,
-        fontSize: '3.8rem',
+        opacity: 0.5,
+        fontSize: '3.1rem',
         fontWeight: "bold",
         marginBottom: '2px',
+        textTransform: 'uppercase',
         "@media (max-width: 1450px)": {
-            fontSize: '3.1rem',
+            fontSize: '3rem',
         },
         "@media (max-width: 1150px)": {
             fontSize: '2.6rem',
@@ -201,7 +202,7 @@ function Hello() {
             </h1>
             <FadeInSection waitingTime={baseTimer + 400}>
             <div className={classes.title}>
-                Computer Science Student.
+                Information Technology Student.
             </div>
             </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 500}>

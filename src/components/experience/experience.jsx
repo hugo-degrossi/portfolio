@@ -120,6 +120,10 @@ const useStyles = makeStyles((theme) => ({
     email: {
         marginLeft: '5px',
         fontStyle: 'italic'
+    },
+    panel_container: {
+        minHeight: '100px',
+        transition: '0.2s all'
     }
 }));
 
@@ -184,30 +188,31 @@ function Experience() {
                                     <Tab className={classes.tab_name} label="INSA Strasbourg" {...a11yProps(1)} />
                                     <Tab className={classes.tab_name} label="French Army" {...a11yProps(2)} />
                                 </Tabs>
-                                <TabPanel className={classes.tab_content} value={value} index={0}>
-                                    <p className={classes.tab_content_title}>PROJECT MANAGER & DEVELOPER</p>
-                                    <p className={classes.tab_content_text}>This is some text.</p>
-                                    <p className={classes.tab_content_title}>REFERENCES</p>
-                                </TabPanel>
-                                <TabPanel className={classes.tab_content} value={value} index={1}>
-                                    <p className={classes.tab_content_title}>FULL STACK DEVELOPER</p>
-                                    <p className={classes.tab_content_text}>Design and develop a Intelligent Research / Deposit App for the Nuxeo DMS (Document Management System) using Django, the Nuxeo API, React, and PostgreSQL from scratch.<br/><br/></p>
-                                    <p className={classes.tab_content_text}>Design and develop a Blog / Wiki App using Django, React, and PostgreSQL from scratch.</p>
-                                    <p className={classes.tab_content_title}>REFERENCES</p>
-                                    <ul className={classes.references}>
-                                        <li className={classes.reference}>
-                                            Eric Louvel <span className={classes.email}>here-is-email@email.com</span>
-                                        </li>
-                                        <li>
-                                            France Schroter <span className={classes.email}>here-is-email@email.com</span>
-                                        </li>
-                                    </ul>
+                                    <TabPanel className={classes.tab_content} value={value} index={0} animateHeight>
+                                        <p className={classes.tab_content_title}>PROJECT MANAGER & DEVELOPER</p>
+                                        <p className={classes.tab_content_text}>This is some text.</p>
+                                        <p className={classes.tab_content_title}>REFERENCES</p>
+                                    </TabPanel>
+                                    <TabPanel className={classes.tab_content} value={value} index={1} animateHeight >
+                                        <p className={classes.tab_content_title}>FULL STACK DEVELOPER</p>
+                                        <p className={classes.tab_content_text}>Design and develop a Intelligent Research / Deposit App for the Nuxeo DMS (Document Management System) using Django, the Nuxeo API, React, and PostgreSQL from scratch.<br/><br/></p>
+                                        <p className={classes.tab_content_text}>Design and develop a Blog / Wiki App using Django, React, and PostgreSQL from scratch.</p>
+                                        <p className={classes.tab_content_title}>REFERENCES</p>
+                                        <ul className={classes.references}>
+                                            <li className={classes.reference}>
+                                                Eric Louvel <span className={classes.email}>here-is-email@email.com</span>
+                                            </li>
+                                            <li>
+                                                France Schroter <span className={classes.email}>here-is-email@email.com</span>
+                                            </li>
+                                        </ul>
 
-                                </TabPanel>
-                                <TabPanel className={classes.tab_content} value={value} index={2}>
-                                    <p className={classes.tab_content_title}>CORPORAL</p>
-                                    <p className={classes.tab_content_text}>Currently Corporal at the 1st Infantry Regiment in Sarrebourg, I am leading 2 soldier, I'm in pass to  become Sergeant and lead a combat group of 8 soldier.</p>
-                                </TabPanel>
+                                    </TabPanel>
+                                    <TabPanel className={classes.tab_content} value={value} index={2} animateHeight >
+                                        <p className={classes.tab_content_title}>CORPORAL</p>
+                                        <p className={classes.tab_content_text}>Currently Corporal at the 1st Infantry Regiment in Sarrebourg, I am leading 2 soldier, I'm in pass to  become Sergeant and lead a combat group of 8 soldier.</p>
+                                    </TabPanel>
+
                             </Box>
                         </div>
                 </div>
