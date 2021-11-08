@@ -30,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: '0.1',
         marginLeft: '35%',
         marginTop: '5px',
+        marginBottom: '50px',
         "@media (max-width: 1150px)": {
             width: '100%',
             marginLeft: '0'
@@ -87,43 +88,77 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '15px',
         }
     },
-    tab_container: {
-        marginTop: '15px',
+    head_exp_right: {
+        marginTop: "50px",
+        display: "flex",
+        justifyContent: "end",
+        flexDirection: "column",
+        textAlign: "right",
+        width: "100%"
     },
-    highlighted: {
-        color: theme.palette.primary.main,
-        fontWeight: "bold"
+    head_exp_left: {
+        marginTop: "50px",
     },
-    tab_name: {
-        fontFamily: 'Segoe UI !important',
-        alignItems: "end !important",
-        fontSize: '1rem !important',
-        fontWeight: "bold !important",
-    },
-    tab_content: {
-        color: theme.palette.text.main + '!important',
-        fontFamily: 'Segoe UI !important',
-        padding: '0 !important',
-        marginRight: '40px !important',
-        maxWidth: '50% !important'
-    },
-    tab_content_title: {
-        color: theme.palette.primary.main + '!important',
+    head_exp_left_title:{
+        color: theme.palette.text.main,
+        fontSize: '1.3rem',
         fontWeight: "bold",
-        textTransform: "uppercase",
-        letterSpacing: '2px',
-        textAlign: "end"
+        letterSpacing: 0,
+        marginBottom: '10px',
+        opacity: 0.9,
+
     },
-    tab_content_text: {
-        opacity: 0.7
+    head_exp_left_divider:{
+        height: '3px',
+        width: "75%",
+        backgroundColor: theme.palette.primary.main,
+        opacity: 0.2,
     },
-    email: {
-        marginLeft: '5px',
-        fontStyle: 'italic'
+    year:{
+
+        color: theme.palette.text.main,
+        fontSize: '1.3rem',
+        fontWeight: "bold",
+        marginRight: '10px',
+        opacity: 0.9,
     },
-    panel_container: {
-        minHeight: '100px',
-        transition: '0.2s all'
+    job_title:{
+
+        color: theme.palette.primary.main,
+        fontSize: '1.1rem',
+        fontWeight: "bold",
+        opacity: 0.7,
+    },
+    stack_left:{
+        width: '60%',
+        marginTop: "20px",
+        display: "flex",
+        justifyContent: 'start',
+        flexWrap: 'wrap'
+    },
+    stack:{
+        width: '60%',
+        marginTop: "20px",
+        display: "flex",
+        flexWrap: 'wrap',
+        justifyContent: 'end',
+    },
+    stack_right:{
+        width: '100%',
+        marginTop: "20px",
+        display: "flex",
+        justifyContent: 'end',
+        flexWrap: 'wrap'
+    },
+    chip: {
+        backgroundColor: theme.palette.primary.main,
+        borderRadius: "20px",
+        padding: "2px 10px 3px 10px",
+        marginRight: "5px",
+        marginLeft: "5px",
+        marginTop: "10px",
+        fontSize: '0.9rem',
+        boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
     }
 }));
 
@@ -173,48 +208,56 @@ function Experience() {
                             <span className={classes.title_text}>Work Experience</ span>
                         </div>
                         <div className={classes.divider} />
-                        <div className={classes.tab_container}>
-                            <Box
-                                sx={{ flexGrow: 1, display: 'flex', justifyContent: 'flex-end',}}
-                            >
-                                <Tabs
-                                    orientation="vertical"
-                                    value={value}
-                                    onChange={handleChange}
-                                    sx={{ borderRight: 1, border: 'none', order: '2', display: 'flex', justifyContent: 'flex-end' }}
 
-                                >
-                                    <Tab className={classes.tab_name} label="Toyota motor europe" {...a11yProps(0)} />
-                                    <Tab className={classes.tab_name} label="INSA Strasbourg" {...a11yProps(1)} />
-                                    <Tab className={classes.tab_name} label="French Army" {...a11yProps(2)} />
-                                </Tabs>
-                                    <TabPanel className={classes.tab_content} value={value} index={0} animateHeight>
-                                        <p className={classes.tab_content_title}>PROJECT MANAGER & DEVELOPER</p>
-                                        <p className={classes.tab_content_text}>This is some text.</p>
-                                        <p className={classes.tab_content_title}>REFERENCES</p>
-                                    </TabPanel>
-                                    <TabPanel className={classes.tab_content} value={value} index={1} animateHeight >
-                                        <p className={classes.tab_content_title}>FULL STACK DEVELOPER</p>
-                                        <p className={classes.tab_content_text}>Design and develop a Intelligent Research / Deposit App for the Nuxeo DMS (Document Management System) using Django, the Nuxeo API, React, and PostgreSQL from scratch.<br/><br/></p>
-                                        <p className={classes.tab_content_text}>Design and develop a Blog / Wiki App using Django, React, and PostgreSQL from scratch.</p>
-                                        <p className={classes.tab_content_title}>REFERENCES</p>
-                                        <ul className={classes.references}>
-                                            <li className={classes.reference}>
-                                                Eric Louvel <span className={classes.email}>here-is-email@email.com</span>
-                                            </li>
-                                            <li>
-                                                France Schroter <span className={classes.email}>here-is-email@email.com</span>
-                                            </li>
-                                        </ul>
-
-                                    </TabPanel>
-                                    <TabPanel className={classes.tab_content} value={value} index={2} animateHeight >
-                                        <p className={classes.tab_content_title}>CORPORAL</p>
-                                        <p className={classes.tab_content_text}>Currently Corporal at the 1st Infantry Regiment in Sarrebourg, I am leading 2 soldier, I'm in pass to  become Sergeant and lead a combat group of 8 soldier.</p>
-                                    </TabPanel>
-
-                            </Box>
+                        <div className={classes.head_exp_left}>
+                            <div><span className={classes.year}>[2021-2022]</span><span className={classes.head_exp_left_title}>PROJECT MANAGER & DEVELOPER</span></div>
+                            <div className={classes.job_title}>TOYOTA MOTOR EUROPE</div>
+                            <div className={classes.description}>Ceci est une description</div>
+                            <div className={classes.stack_left}>
+                                <span className={classes.chip}>React</span>
+                                <span className={classes.chip}>Spring Boot</span>
+                                <span className={classes.chip}>Mapbox</span>
+                                <span className={classes.chip}>D3JS</span>
+                                <span className={classes.chip}>D3JS</span>
+                                <span className={classes.chip}>D3JS</span>
+                                <span className={classes.chip}>D3JS</span>
+                                <span className={classes.chip}>D3JS</span>
+                            </div>
                         </div>
+
+                        <div className={classes.head_exp_right}>
+                            <div><span className={classes.year}>[2021]</span><span className={classes.head_exp_left_title}>FULL STACK DEVELOPER</span></div>
+                            <div className={classes.job_title}>INSA STRASBOURG</div>
+                            <div className={classes.description}>Ceci est une description</div>
+                            <div className={classes.stack_right}>
+                                <div className={classes.stack}>
+                                    <span className={classes.chip}>React</span>
+                                    <span className={classes.chip}>Spring Boot</span>
+                                    <span className={classes.chip}>Mapbox</span>
+                                    <span className={classes.chip}>D3JS</span>
+                                    <span className={classes.chip}>D3JS</span>
+                                    <span className={classes.chip}>D3JS</span>
+                                    <span className={classes.chip}>D3JS</span>
+                                    <span className={classes.chip}>D3JS</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    <div className={classes.head_exp_left}>
+                        <div><span className={classes.year}>[2021-2022]</span><span className={classes.head_exp_left_title}>PROJECT MANAGER & DEVELOPER</span></div>
+                        <div className={classes.job_title}>TOYOTA MOTOR EUROPE</div>
+                        <div className={classes.description}>Ceci est une description</div>
+                        <div className={classes.stack_left}>
+                            <span className={classes.chip}>React</span>
+                            <span className={classes.chip}>Spring Boot</span>
+                            <span className={classes.chip}>Mapbox</span>
+                            <span className={classes.chip}>D3JS</span>
+                            <span className={classes.chip}>D3JS</span>
+                            <span className={classes.chip}>D3JS</span>
+                            <span className={classes.chip}>D3JS</span>
+                            <span className={classes.chip}>D3JS</span>
+                        </div>
+                    </div>
                 </div>
 
             </FadeInSection>

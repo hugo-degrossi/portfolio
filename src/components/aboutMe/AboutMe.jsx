@@ -76,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
         opacity: 0.3,
         transition: 'all 0.3s ease 0s',
         backgroundColor: theme.palette.primary.main,
+        display: 'none',
         '&:hover' :{
             opacity: 0,
         },
@@ -90,10 +91,14 @@ const useStyles = makeStyles((theme) => ({
         left: 'calc(50% - 110px)',
         height: '250px',
         width: '250px',
+        '&:hover' :{
+            transform: 'translate(-3px, -3px)'
+        },
         transition: 'all 0.3s ease 0s',
         "@media (max-width: 1150px)": {
             display: 'none'
         },
+        boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
     },
     title: {
         marginBottom: '2px',
