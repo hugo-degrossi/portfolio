@@ -1,6 +1,6 @@
 import React from 'react';
 import { ThemeProvider, makeStyles } from '@mui/styles';
-import {Typography} from "@mui/material";
+import {Button, tooltipClasses, Typography} from "@mui/material";
 import AppBar from '@mui/material/AppBar';
 import logo from "../../h_logo.svg"
 import FadeInSection from "../fadeInSection";
@@ -9,6 +9,10 @@ import {ReactSVG} from "react-svg";
 import ProjectCard from "./projectCard";
 
 import PP from "../../media/profilpic.jpg"
+import LinkIcon from '@mui/icons-material/Link';
+import Typewriter from "typewriter-effect";
+import styled from "@emotion/styled";
+import Tooltip from "@mui/material/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -85,6 +89,7 @@ const useStyles = makeStyles((theme) => ({
     project_card: {
         display: "flex",
         flexDirection: "row",
+        justifyContent: "space-between",
         width: "100%",
         borderRadius: "4px",
         position: "relative",
@@ -93,11 +98,9 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
         '&:hover': {
             "& $image_box": {
-                //transform: 'translate(10px, -10px)',
             },
             "& $box": {
-                transform: 'translate(-2px, -2px)',
-                opacity: 0
+                opacity: 0.7
             },
         }
     },
@@ -122,17 +125,30 @@ const useStyles = makeStyles((theme) => ({
     box: {
         position: "absolute",
         borderRadius: "4px",
-        transition: " all 1s, transform 0.3s",
-        border: '2px solid' + theme.palette.primary.main,
-        top: "10px",
-        left: "-10px",
+        transition: "all 0.3s",
+        backgroundColor: theme.palette.primary.main,
+        top: "20px",
+        left: "-20px",
         maxWidth: "30%",
-        zIndex: 1,
         height: "100%",
         aspectRatio: "1",
+        opacity: 0,
+        zIndex: 4,
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        fontWeight: 'bold',
+        color: theme.palette.info.main,
+        '&:hover' : {
+            cursor: 'pointer'
+        }
     },
     card_content: {
         padding: "20px",
+        width: '80%',
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "space-between"
     },
     name: {
         fontWeight: "bold",
@@ -146,73 +162,32 @@ const useStyles = makeStyles((theme) => ({
         marginLeft: "10px",
         opacity: 0.9,
     },
-    project: {
-        aspectRatio: "1",
-        borderRadius: '4px',
-        position: "relative",
-        '&:hover': {
-            "& $box1": {
-                transform: 'translate(5px, 5px)'
-            },
-            "& $box2": {
-                transform: 'translate(-3px, -3px)',
-                borderRadius: '0px',
-            }
-        }
-    },
-    box1: {
-        position: "absolute",
-        top: "-5px",
-        left: "-5px",
-        border: '2px solid' + theme.palette.primary.main,
-        width: "100%",
-        height: "100%",
-        transition: "all 0.3s",
-        borderRadius: '4px'
-    },
-    box2: {
-        position: "absolute",
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        top: "5px",
-        left: "5px",
-        width: "100%",
-        height: "100%",
-        transition: "all 0.3s",
-        borderRadius: '4px',
+    actions: {
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "end"
 
     },
-    projectInfos: {
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "start",
-        alignItems: "center",
-        flexDirection: "column",
-        backgroundColor: theme.palette.primary.main,
+    btn: {
+        fontFamily: 'Montserrat !important',
+        fontWeight: "bold !important"
     },
-    chips: {
-        justifyContent: 'center',
-        marginTop: "20px",
-        display: "flex",
-        flexWrap: "wrap",
-        padding: "10px"
-    },
-    chip: {
-        backgroundColor: theme.palette.primary.third,
-        padding: "2px 10px",
-        margin: "3px",
-        color: theme.palette.primary.main,
-        opacity: 0.8,
-        borderRadius: "20px",
-        fontSize: "0.9rem",
-        fontWeight: "bold"
-    }
 }));
-
+const CustomTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+        backgroundColor: "#DC9777",
+        color: 'rgba(0, 0, 0, 0.87)',
+        boxShadow: theme.shadows[1],
+        fontFamily: 'Montserrat',
+        fontSize: 13,
+        fontWeight: "bold"
+    },
+}));
 export default function Projects() {
     const classes = useStyles();
-
+    //<LinkIcon fontSize={"large"} color={"info"}/>
     return (
         <>
             <FadeInSection waitingTime={1500}>
@@ -226,10 +201,23 @@ export default function Projects() {
                     <div className={classes.projects_container}>
                         <div className={classes.project_card}>
                             <div className={classes.image_box} style={{backgroundImage: `url(${PP})`}} />
+                            <CustomTooltip title="Click to access" placement="top">
+                                <div className={classes.box}>
+                                    <LinkIcon fontSize={"large"} color={"info"}/>
+
+                                </div>
+                            </CustomTooltip>
                             <div className={classes.placeholder} />
                             <div className={classes.card_content}>
                                 <div className={classes.name}>My Project Name</div>
                                 <div className={classes.description}>This is a description about what the project is.</div>
+
+                                <div className={classes.actions}>
+                                    <Button className={classes.btn} variant="outlined">
+                                        See on Github
+                                    </Button>
+                                </div>
+
                             </div>
                         </div>
                     </div>

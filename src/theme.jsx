@@ -43,7 +43,7 @@ const theme = createTheme({
             main: '#FC7B09',//orange
         },
         info: {
-            main: '#6B7D6A',//gray
+            main: '#2F1919',//gray
         },
         success: {
             main: '#09FE00',//green

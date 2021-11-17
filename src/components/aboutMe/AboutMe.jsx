@@ -55,6 +55,14 @@ const useStyles = makeStyles((theme) => ({
             flexBasis: '100%',
         },
 
+        '&:hover' :{
+            "& $image_box": {
+                transform: 'translate(3px, 3px)'
+            },
+            "& $image": {
+                transform: 'translate(-3px, -3px)'
+            },
+        },
     },
     image_box: {
         position: "absolute",
@@ -64,28 +72,10 @@ const useStyles = makeStyles((theme) => ({
         width: '250px',
         borderRadius: '4px',
         border: '2px solid' + theme.palette.primary.main,
-        "@media (max-width: 1150px)": {
-            display: 'none'
-        },
-    },
-    image_over: {
-        position: "absolute",
-        top: 'calc(50% - 110px)',
-        left: 'calc(50% - 110px)',
-        height: '250px',
-        width: '250px',
-        opacity: 0.3,
-        borderRadius: '4px',
         transition: 'all 0.3s ease 0s',
-        backgroundColor: theme.palette.primary.main,
-        display: 'none',
-        '&:hover' :{
-            opacity: 0,
-        },
         "@media (max-width: 1150px)": {
             display: 'none'
         },
-
     },
     image: {
         position: "absolute",
@@ -94,9 +84,6 @@ const useStyles = makeStyles((theme) => ({
         height: '250px',
         width: '250px',
         borderRadius: '4px',
-        '&:hover' :{
-            transform: 'translate(-3px, -3px)'
-        },
         transition: 'all 0.3s ease 0s',
         "@media (max-width: 1150px)": {
             display: 'none'

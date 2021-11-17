@@ -106,12 +106,12 @@ const useStyles = makeStyles((theme) => ({
         height: '100%',
     },
     hire_me_btn: {
-        fontFamily: 'Segoe UI !important',
+        fontFamily: 'Montserrat !important',
         alignItems: "center",
         fontWeight: "bold !important"
     },
     download_resume_btn: {
-        fontFamily: 'Segoe UI !important',
+        fontFamily: 'Montserrat !important',
         marginRight: '25px !important',
         alignItems: "center",
         fontWeight: "bold !important",
@@ -207,9 +207,8 @@ function Hello() {
             </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 500}>
             <div className={classes.description}>
-                Currently applying for an IT internship in the web developement sector, however, I
-                am open to any opportunity. The internship length is 19 weeks (from last week of
-                september 2021 to first week of february 2022).
+                Currently applying for an IT internship (Project Management, Data Science, or Software/Web development sector).
+                The internship length is 6 months and will be my end-of-studies internship.
             </div>
             </ FadeInSection>
 

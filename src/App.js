@@ -14,9 +14,10 @@ import logo_animated from "./h_logo_animated_4.svg"
 import logo_static from "./h_logo_static.svg"
 import {ReactSVG} from "react-svg";
 import github from  "./media/icons/github.png"
-import PP from "./media/profilpic.jpg";
+import linkedin from  "./media/icons/linkedin.png"
 import Tooltip from '@mui/material/Tooltip';
 import styled from "@emotion/styled";
+import FadeInSection from "./components/fadeInSection";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -47,13 +48,14 @@ const useStyles = makeStyles((theme) => ({
     },
     image: {
         width: "30px",
-        margin: "10px 0",
+        margin: "5px 0",
         height: "30px",
         "&:hover": {
             cursor: "pointer"
         }
     },
     bar: {
+        marginTop: '5px',
         width: "2px",
         height: "140px",
         backgroundColor: "#DC9777",
@@ -100,11 +102,14 @@ const CustomTooltip = styled(({ className, ...props }) => (
         boxShadow: theme.shadows[1],
         fontFamily: 'Montserrat',
         fontSize: 13,
+        fontWeight: "bold"
     },
 }));
 
 
 const ContextContainer = createContext(null)
+
+const baseTimer = 2200
 
 function App() {
     const classes = useStyles();
@@ -153,10 +158,22 @@ function App() {
         <>
             <ThemeProvider theme={theme}>
                 <div className={classes.media}>
-                    <CustomTooltip title="Github" placement="right">
-                        <img className={classes.image} src={github} alt={'profile pic'}/>
-                    </CustomTooltip>
-                    <div className={classes.bar}></div>
+
+                    <FadeInSection waitingTime={baseTimer + 200}>
+                        <CustomTooltip title="Contact me on LinkedIn" placement="right">
+                            <img className={classes.image} onClick={() => {window.open("https://www.linkedin.com/in/hugo-de-grossi-796524180/", "_blank")}} src={linkedin} alt={'Linkedin'}/>
+                        </CustomTooltip>
+                    </ FadeInSection>
+
+                    <FadeInSection waitingTime={baseTimer + 300}>
+                        <CustomTooltip title="Check my Github!" placement="right">
+                            <img className={classes.image} onClick={() => {window.open("https://github.com/hugo-degrossi", "_blank")}} src={github} alt={'Github'}/>
+                        </CustomTooltip>
+                    </ FadeInSection>
+
+                    <FadeInSection waitingTime={baseTimer + 400}>
+                        <div className={classes.bar} />
+                    </ FadeInSection>
                 </div>
                 <ContextContainer.Provider value={{scrollPosition}}>
                     <NavBar ContextContainer={ContextContainer} />
