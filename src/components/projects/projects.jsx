@@ -9,6 +9,7 @@ import {ReactSVG} from "react-svg";
 import ProjectCard from "./projectCard";
 
 import PP from "../../media/profilpic.jpg"
+import portfolio from "../../media/portfolio.png"
 import LinkIcon from '@mui/icons-material/Link';
 import Typewriter from "typewriter-effect";
 import styled from "@emotion/styled";
@@ -89,6 +90,7 @@ const useStyles = makeStyles((theme) => ({
     project_card: {
         display: "flex",
         flexDirection: "row",
+        marginBottom: '40px',
         justifyContent: "space-between",
         width: "100%",
         borderRadius: "4px",
@@ -109,8 +111,9 @@ const useStyles = makeStyles((theme) => ({
         aspectRatio: "1",
     },
     image_box: {
-        backgroundSize: "contain",
+        backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
+        backgroundPosition: "center center",
         position: "absolute",
         borderRadius: "4px",
         transition: "all 0.3s",
@@ -156,11 +159,22 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.main,
     },
     description: {
-        fontSize: "1rem",
-        color: theme.palette.text.main,
         marginTop: "10px",
         marginLeft: "10px",
-        opacity: 0.9,
+        color: theme.palette.text.main,
+        opacity: 0.75,
+        fontSize: '1rem',
+        textAlign: "justify",
+        "@media (max-width: 1150px)": {
+            width: '100%',
+        },
+        "@media (max-width: 950px)": {
+            width: '100%',
+        },
+        "@media (max-width: 800px)": {
+            width: '100%',
+            marginTop: '15px',
+        }
     },
     actions: {
         display: "flex",
@@ -172,6 +186,10 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: 'Montserrat !important',
         fontWeight: "bold !important"
     },
+    highlighted: {
+        color: theme.palette.primary.main,
+        fontWeight: "bold"
+    }
 }));
 const CustomTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
@@ -190,40 +208,107 @@ export default function Projects() {
     //<LinkIcon fontSize={"large"} color={"info"}/>
     return (
         <>
-            <FadeInSection waitingTime={1500}>
                 <div className={classes.root}>
+                    <FadeInSection waitingTime={1500}>
                     <div className={classes.title}>
                         <span className={classes.number}>02. </ span>
                         <span className={classes.title_text}>Projects</ span>
                     </div>
                     <div className={classes.divider} />
+                    </FadeInSection>
 
                     <div className={classes.projects_container}>
-                        <div className={classes.project_card}>
-                            <div className={classes.image_box} style={{backgroundImage: `url(${PP})`}} />
-                            <CustomTooltip title="Click to access" placement="top">
-                                <div className={classes.box}>
-                                    <LinkIcon fontSize={"large"} color={"info"}/>
+                        <FadeInSection waitingTime={1500}>
+                            <div className={classes.project_card}>
+                                <div className={classes.image_box} style={{backgroundImage: `url(${portfolio})`}}/>
+                                <CustomTooltip title="Looks like you're already here ;)" placement="top">
+                                    <div className={classes.box}>
+                                        <LinkIcon fontSize={"large"} color={"info"}/>
+                                    </div>
+                                </CustomTooltip>
+                                <div className={classes.placeholder} />
+                                <div className={classes.card_content}>
+                                    <div className={classes.name}>Personal Portfolio</div>
+                                    <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
+
+                                    <div className={classes.actions}>
+                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                            See on Github
+                                        </Button>
+                                    </div>
 
                                 </div>
-                            </CustomTooltip>
-                            <div className={classes.placeholder} />
-                            <div className={classes.card_content}>
-                                <div className={classes.name}>My Project Name</div>
-                                <div className={classes.description}>This is a description about what the project is.</div>
-
-                                <div className={classes.actions}>
-                                    <Button className={classes.btn} variant="outlined">
-                                        See on Github
-                                    </Button>
-                                </div>
-
                             </div>
-                        </div>
+                        </FadeInSection>
+                        <FadeInSection waitingTime={1500}>
+                            <div className={classes.project_card}>
+                                <div className={classes.image_box} style={{backgroundImage: `url(${portfolio})`}}/>
+                                <CustomTooltip title="Looks like you're already here ;)" placement="top">
+                                    <div className={classes.box}>
+                                        <LinkIcon fontSize={"large"} color={"info"}/>
+                                    </div>
+                                </CustomTooltip>
+                                <div className={classes.placeholder} />
+                                <div className={classes.card_content}>
+                                    <div className={classes.name}>Personal Portfolio</div>
+                                    <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
+
+                                    <div className={classes.actions}>
+                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                            See on Github
+                                        </Button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </FadeInSection>
+                        <FadeInSection waitingTime={1500}>
+                            <div className={classes.project_card}>
+                                <div className={classes.image_box} style={{backgroundImage: `url(${portfolio})`}}/>
+                                <CustomTooltip title="Looks like you're already here ;)" placement="top">
+                                    <div className={classes.box}>
+                                        <LinkIcon fontSize={"large"} color={"info"}/>
+                                    </div>
+                                </CustomTooltip>
+                                <div className={classes.placeholder} />
+                                <div className={classes.card_content}>
+                                    <div className={classes.name}>Personal Portfolio</div>
+                                    <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
+
+                                    <div className={classes.actions}>
+                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                            See on Github
+                                        </Button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </FadeInSection>
+                        <FadeInSection waitingTime={1500}>
+                            <div className={classes.project_card}>
+                                <div className={classes.image_box} style={{backgroundImage: `url(${portfolio})`}}/>
+                                <CustomTooltip title="Looks like you're already here ;)" placement="top">
+                                    <div className={classes.box}>
+                                        <LinkIcon fontSize={"large"} color={"info"}/>
+                                    </div>
+                                </CustomTooltip>
+                                <div className={classes.placeholder} />
+                                <div className={classes.card_content}>
+                                    <div className={classes.name}>Personal Portfolio</div>
+                                    <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
+
+                                    <div className={classes.actions}>
+                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                            See on Github
+                                        </Button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </FadeInSection>
                     </div>
 
                 </div>
-            </FadeInSection>
         </>
     );
 }

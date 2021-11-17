@@ -160,38 +160,40 @@ function AboutMe() {
 
     return (
         <>
-            <FadeInSection waitingTime={1500}>
                 <div className={classes.root}>
-                    <div className={classes.title}>
-                        <span className={classes.number}>01. </ span>
-                        <span className={classes.title_text}>About Me</ span>
-                    </div>
-                    <div className={classes.divider} />
-                    <div className={classes.container}>
+                    <FadeInSection waitingTime={1500}>
+                        <div className={classes.title}>
+                            <span className={classes.number}>01. </ span>
+                            <span className={classes.title_text}>About Me</ span>
+                        </div>
+                        <div className={classes.divider} />
+                    </FadeInSection>
+                    <FadeInSection waitingTime={1500}>
+                        <div className={classes.container}>
 
-                        <div className={classes.box}>
-                            <div className={classes.description}>
-                                <p>Hey ! My name's Hugo De Grossi,  I'm basically <span className={classes.highlighted}>loving IT</span> and a lot of other things like cars, sport, and eating good meals (by the way that's why I do sport).</ p>
-                                <p>Currently living in a little town near Strasbourg (some friends call it a 'tribe') I've made my way to the IT field not only by studying <span className={classes.highlighted}>Computer Science / IT Engineering</span> at CESI Ecole d'Ingenieur, but also by <span className={classes.highlighted}>self-learning</span> and <span className={classes.highlighted}>continuously improving my skills</span>.</p>
-                                <p>I've had the opportunity to work for a <span className={classes.highlighted}>public company</span> but also for a <span className={classes.highlighted}>massive worldwide company</span>.</ p>
-                                <p>I really want to be  <span className={classes.highlighted}>confident</span> in my work, that's also why I love learning new things, new possibilities, new way to solve a problem, so I can be sure to do the best choice everytime it's needed.</ p>
-                                <p>I currently also work as a <span className={classes.highlighted}>Corporal</span> (Reservist) for the 1st Infantry Regiment in France (for more than three years), this give me a <span className={classes.highlighted}>sense of leadership</span>  , and a lot more confidence in myself and the others. (This part-time engagement <span className={classes.highlighted}>always pass after full-time work & study</span> )</ p>
+                            <div className={classes.box}>
+                                <div className={classes.description}>
+                                    <p>Hey ! My name's Hugo De Grossi,  I'm basically <span className={classes.highlighted}>loving IT</span> and a lot of other things like cars, sport, and eating good meals (by the way that's why I do sport).</ p>
+                                    <p>Currently living in a little town near Strasbourg (some friends call it a 'tribe') I've made my way to the IT field not only by studying <span className={classes.highlighted}>Computer Science / IT Engineering</span> at CESI Ecole d'Ingenieur, but also by <span className={classes.highlighted}>self-learning</span> and <span className={classes.highlighted}>continuously improving my skills</span>.</p>
+                                    <p>I've had the opportunity to work for a <span className={classes.highlighted}>public company</span> but also for a <span className={classes.highlighted}>massive worldwide company</span>.</ p>
+                                    <p>I really want to be  <span className={classes.highlighted}>confident</span> in my work, that's also why I love learning new things, new possibilities, new way to solve a problem, so I can be sure to do the best choice everytime it's needed.</ p>
+                                    <p>I currently also work as a <span className={classes.highlighted}>Corporal</span> (Reservist) for the 1st Infantry Regiment in France (for more than three years), this give me a <span className={classes.highlighted}>sense of leadership</span>  , and a lot more confidence in myself and the others. (This part-time engagement <span className={classes.highlighted}>always pass after full-time work & study</span> )</ p>
+                                </div>
+
+                            </div>
+                            <div className={classes.image_container}>
+                                    <div className={classes.image_box} />
+                                    <img className={classes.image} src={PP} alt={'profile pic'}/>
+                                    <div className={classes.image_over} />
                             </div>
 
                         </div>
-                        <div className={classes.image_container}>
-                            <div className={classes.image_box} />
-                            <img className={classes.image} src={PP} alt={'profile pic'}/>
-                            <div className={classes.image_over} />
-                        </div>
-
-                    </div>
+                    </FadeInSection>
 
 
 
                 </div>
 
-            </FadeInSection>
         </>
     );
 }

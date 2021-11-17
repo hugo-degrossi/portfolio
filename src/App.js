@@ -1,18 +1,13 @@
 import React, {createContext, useEffect, useState} from 'react';
 import theme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
-import {Button, tooltipClasses, Typography} from "@mui/material";
+import {tooltipClasses} from "@mui/material";
 import Hello from "./components/home/hello";
 import {makeStyles} from "@mui/styles";
-import logo from "./logo_kiwi.png"
 import NavBar from "./components/nav/navBar";
 import AboutMe from "./components/aboutMe/AboutMe";
-import Experience from "./components/experience/experience";
-import Skills from "./components/skills/skills";
 import Projects from "./components/projects/projects";
 import logo_animated from "./h_logo_animated_4.svg"
-import logo_static from "./h_logo_static.svg"
-import {ReactSVG} from "react-svg";
 import github from  "./media/icons/github.png"
 import linkedin from  "./media/icons/linkedin.png"
 import Tooltip from '@mui/material/Tooltip';
@@ -58,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
         marginTop: '5px',
         width: "2px",
         height: "140px",
-        backgroundColor: "#DC9777",
+        backgroundColor: "#b1775f",
     },
     logo: {
         position: "absolute",
@@ -97,7 +92,7 @@ const CustomTooltip = styled(({ className, ...props }) => (
     <Tooltip {...props} classes={{ popper: className }} />
 ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
-        backgroundColor: "#DC9777",
+        backgroundColor: "#b1775f",
         color: 'rgba(0, 0, 0, 0.87)',
         boxShadow: theme.shadows[1],
         fontFamily: 'Montserrat',

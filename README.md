@@ -1,6 +1,9 @@
 # Portfolio
 
-Here you can see the source code of my portfolio, feel free to use it for your own portfolio.
+> Here you can see the source code of my portfolio, feel free to use it to make your own portfolio.
 
+![portfolio](src/media/portfolio.png)
 
-![portfolio](portfolio.PNG)
+## Stack
+
+Static front-end app made with React.
