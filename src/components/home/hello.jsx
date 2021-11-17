@@ -6,7 +6,7 @@ import FadeInSection from "../fadeInSection";
 import {Button} from "@mui/material";
 import Skills from "../skills/skills";
 
-const baseTimer = 1250
+const baseTimer = 1000
 
 const useStyles = makeStyles((theme) => ({
     container: {

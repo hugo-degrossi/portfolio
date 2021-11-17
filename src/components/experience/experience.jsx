@@ -30,28 +30,28 @@ const useStyles = makeStyles((theme) => ({
         opacity: '0.1',
         marginLeft: '35%',
         marginTop: '5px',
-        marginBottom: '50px',
+        marginBottom: '30px',
         "@media (max-width: 1150px)": {
             width: '100%',
             marginLeft: '0'
         },
+        "@media (max-width: 800px)": {
+            marginBottom: '15px',
+        }
     },
     title_text: {
         color: theme.palette.text.main,
         fontSize: '1.8rem',
         fontWeight: "bold",
         letterSpacing: 0,
-        "@media (max-width: 1450px)": {
-            fontSize: '1.8rem',
-        },
         "@media (max-width: 1150px)": {
-            fontSize: '1.6rem',
+            fontSize: '1.7rem',
         },
         "@media (max-width: 950px)": {
-            fontSize: '1.4rem',
+            fontSize: '1.6rem',
         },
         "@media (max-width: 800px)": {
-            fontSize: '1.2rem',
+            fontSize: '1.5rem',
         }
     },
     number: {
@@ -82,6 +82,7 @@ const useStyles = makeStyles((theme) => ({
         },
         "@media (max-width: 950px)": {
             width: '80%',
+            fontSize: '0.9rem',
         },
         "@media (max-width: 800px)": {
             width: '100%',
@@ -89,15 +90,16 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     head_exp_right: {
-        marginTop: "50px",
+        marginTop: "30px",
         display: "flex",
         justifyContent: "end",
         flexDirection: "column",
         textAlign: "right",
-        width: "100%"
+        width: "100%",
     },
     head_exp_left: {
-        marginTop: "50px",
+        marginTop: "30px",
+
     },
     head_exp_left_title:{
         color: theme.palette.text.main,
@@ -105,7 +107,18 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: "bold",
         letterSpacing: 0,
         marginBottom: '10px',
+        padding: '4px',
         opacity: 0.9,
+
+        "@media (max-width: 1150px)": {
+            fontSize: '1.2rem',
+        },
+        "@media (max-width: 950px)": {
+            fontSize: '1.1rem',
+        },
+        "@media (max-width: 800px)": {
+            fontSize: '1rem',
+        }
 
     },
     head_exp_left_divider:{
@@ -114,20 +127,18 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.primary.main,
         opacity: 0.2,
     },
-    year:{
-
-        color: theme.palette.text.main,
-        fontSize: '1.3rem',
-        fontWeight: "bold",
-        marginRight: '10px',
-        opacity: 0.9,
-    },
     job_title:{
-
         color: theme.palette.primary.main,
         fontSize: '1.1rem',
         fontWeight: "bold",
         opacity: 0.7,
+
+        "@media (max-width: 950px)": {
+            fontSize: '1rem',
+        },
+        "@media (max-width: 800px)": {
+            fontSize: '0.9rem',
+        }
     },
     stack_left:{
         width: '60%',
@@ -142,13 +153,22 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         flexWrap: 'wrap',
         justifyContent: 'end',
+
+        "@media (max-width: 1150px)": {
+            width: '60%',
+            justifyContent: 'start',
+        },
     },
     stack_right:{
         width: '100%',
         marginTop: "20px",
         display: "flex",
         justifyContent: 'end',
-        flexWrap: 'wrap'
+        flexWrap: 'wrap',
+
+        "@media (max-width: 1150px)": {
+            justifyContent: 'start',
+        },
     },
     chip: {
         backgroundColor: theme.palette.primary.main,
@@ -210,53 +230,21 @@ function Experience() {
                         <div className={classes.divider} />
 
                         <div className={classes.head_exp_left}>
-                            <div><span className={classes.year}>[2021-2022]</span><span className={classes.head_exp_left_title}>PROJECT MANAGER & DEVELOPER</span></div>
+                            <div className={classes.head_exp_left_title}>[2021-2022] PROJECT MANAGER & DEVELOPER</div>
                             <div className={classes.job_title}>TOYOTA MOTOR EUROPE</div>
                             <div className={classes.description}>Ceci est une description</div>
-                            <div className={classes.stack_left}>
-                                <span className={classes.chip}>React</span>
-                                <span className={classes.chip}>Spring Boot</span>
-                                <span className={classes.chip}>Mapbox</span>
-                                <span className={classes.chip}>D3JS</span>
-                                <span className={classes.chip}>D3JS</span>
-                                <span className={classes.chip}>D3JS</span>
-                                <span className={classes.chip}>D3JS</span>
-                                <span className={classes.chip}>D3JS</span>
-                            </div>
                         </div>
 
                         <div className={classes.head_exp_right}>
-                            <div><span className={classes.year}>[2021]</span><span className={classes.head_exp_left_title}>FULL STACK DEVELOPER</span></div>
+                            <div className={classes.head_exp_left_title}>[2021-2022] PROJECT MANAGER & DEVELOPER</div>
                             <div className={classes.job_title}>INSA STRASBOURG</div>
                             <div className={classes.description}>Ceci est une description</div>
-                            <div className={classes.stack_right}>
-                                <div className={classes.stack}>
-                                    <span className={classes.chip}>React</span>
-                                    <span className={classes.chip}>Spring Boot</span>
-                                    <span className={classes.chip}>Mapbox</span>
-                                    <span className={classes.chip}>D3JS</span>
-                                    <span className={classes.chip}>D3JS</span>
-                                    <span className={classes.chip}>D3JS</span>
-                                    <span className={classes.chip}>D3JS</span>
-                                    <span className={classes.chip}>D3JS</span>
-                                </div>
-                            </div>
                         </div>
 
                     <div className={classes.head_exp_left}>
-                        <div><span className={classes.year}>[2021-2022]</span><span className={classes.head_exp_left_title}>PROJECT MANAGER & DEVELOPER</span></div>
+                        <div className={classes.head_exp_left_title}>[2021-2022] PROJECT MANAGER & DEVELOPER</div>
                         <div className={classes.job_title}>TOYOTA MOTOR EUROPE</div>
                         <div className={classes.description}>Ceci est une description</div>
-                        <div className={classes.stack_left}>
-                            <span className={classes.chip}>React</span>
-                            <span className={classes.chip}>Spring Boot</span>
-                            <span className={classes.chip}>Mapbox</span>
-                            <span className={classes.chip}>D3JS</span>
-                            <span className={classes.chip}>D3JS</span>
-                            <span className={classes.chip}>D3JS</span>
-                            <span className={classes.chip}>D3JS</span>
-                            <span className={classes.chip}>D3JS</span>
-                        </div>
                     </div>
                 </div>
 

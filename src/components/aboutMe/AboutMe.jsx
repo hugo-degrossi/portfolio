@@ -62,6 +62,7 @@ const useStyles = makeStyles((theme) => ({
         left: 'calc(50% - 125px)',
         height: '250px',
         width: '250px',
+        borderRadius: '4px',
         border: '2px solid' + theme.palette.primary.main,
         "@media (max-width: 1150px)": {
             display: 'none'
@@ -74,6 +75,7 @@ const useStyles = makeStyles((theme) => ({
         height: '250px',
         width: '250px',
         opacity: 0.3,
+        borderRadius: '4px',
         transition: 'all 0.3s ease 0s',
         backgroundColor: theme.palette.primary.main,
         display: 'none',
@@ -91,6 +93,7 @@ const useStyles = makeStyles((theme) => ({
         left: 'calc(50% - 110px)',
         height: '250px',
         width: '250px',
+        borderRadius: '4px',
         '&:hover' :{
             transform: 'translate(-3px, -3px)'
         },
@@ -113,17 +116,14 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.8rem',
         fontWeight: "bold",
         letterSpacing: 0,
-        "@media (max-width: 1450px)": {
-            fontSize: '1.8rem',
-        },
         "@media (max-width: 1150px)": {
-            fontSize: '1.6rem',
+            fontSize: '1.7rem',
         },
         "@media (max-width: 950px)": {
-            fontSize: '1.4rem',
+            fontSize: '1.6rem',
         },
         "@media (max-width: 800px)": {
-            fontSize: '1.2rem',
+            fontSize: '1.5rem',
         }
     },
     number: {
@@ -149,12 +149,13 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.main,
         opacity: 0.75,
         fontSize: '1rem',
-        marginTop: '20px',
+        marginTop: '30px',
+        textAlign: "justify",
         "@media (max-width: 1150px)": {
-            width: '70%',
+            width: '100%',
         },
         "@media (max-width: 950px)": {
-            width: '80%',
+            width: '100%',
         },
         "@media (max-width: 800px)": {
             width: '100%',
@@ -184,7 +185,7 @@ function AboutMe() {
                         <div className={classes.box}>
                             <div className={classes.description}>
                                 <p>Hey ! My name's Hugo De Grossi,  I'm basically <span className={classes.highlighted}>loving IT</span> and a lot of other things like cars, sport, and eating good meals (by the way that's why I do sport).</ p>
-                                <p>Currently living in a little town near Strasbourg (some friends call it a 'tribe') I've made my way to the IT field by not only studying <span className={classes.highlighted}>Computer Science / IT Engineering</span> at CESI Ecole d'Ingenieur, but also by <span className={classes.highlighted}>self-learning</span> and <span className={classes.highlighted}>continuously improving my skills</span>.</p>
+                                <p>Currently living in a little town near Strasbourg (some friends call it a 'tribe') I've made my way to the IT field not only by studying <span className={classes.highlighted}>Computer Science / IT Engineering</span> at CESI Ecole d'Ingenieur, but also by <span className={classes.highlighted}>self-learning</span> and <span className={classes.highlighted}>continuously improving my skills</span>.</p>
                                 <p>I've had the opportunity to work for a <span className={classes.highlighted}>public company</span> but also for a <span className={classes.highlighted}>massive worldwide company</span>.</ p>
                                 <p>I really want to be  <span className={classes.highlighted}>confident</span> in my work, that's also why I love learning new things, new possibilities, new way to solve a problem, so I can be sure to do the best choice everytime it's needed.</ p>
                                 <p>I currently also work as a <span className={classes.highlighted}>Corporal</span> (Reservist) for the 1st Infantry Regiment in France (for more than three years), this give me a <span className={classes.highlighted}>sense of leadership</span>  , and a lot more confidence in myself and the others. (This part-time engagement <span className={classes.highlighted}>always pass after full-time work & study</span> )</ p>

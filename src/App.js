@@ -1,7 +1,7 @@
-import React, {useEffect, useState} from 'react';
+import React, {createContext, useEffect, useState} from 'react';
 import theme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
-import {Typography} from "@mui/material";
+import {Button, tooltipClasses, Typography} from "@mui/material";
 import Hello from "./components/home/hello";
 import {makeStyles} from "@mui/styles";
 import logo from "./logo_kiwi.png"
@@ -13,6 +13,10 @@ import Projects from "./components/projects/projects";
 import logo_animated from "./h_logo_animated_4.svg"
 import logo_static from "./h_logo_static.svg"
 import {ReactSVG} from "react-svg";
+import github from  "./media/icons/github.png"
+import PP from "./media/profilpic.jpg";
+import Tooltip from '@mui/material/Tooltip';
+import styled from "@emotion/styled";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -30,6 +34,30 @@ const useStyles = makeStyles((theme) => ({
             padding: '0 8vw 20px 8vw',
         }
     },
+    media: {
+        position: "fixed",
+        bottom: '0',
+        left: '50px',
+        width: "50px",
+        height: "300px",
+        display: "flex",
+        justifyContent: "end",
+        alignItems: "center",
+        flexDirection: "column"
+    },
+    image: {
+        width: "30px",
+        margin: "10px 0",
+        height: "30px",
+        "&:hover": {
+            cursor: "pointer"
+        }
+    },
+    bar: {
+        width: "2px",
+        height: "140px",
+        backgroundColor: "#DC9777",
+    },
     logo: {
         position: "absolute",
         top: '25px',
@@ -37,7 +65,8 @@ const useStyles = makeStyles((theme) => ({
     },
     container: {
         display: 'block',
-        margin: '5vh 0 15vh 0'
+        margin: 'calc(5vh-100px) 0 15vh 0',
+        paddingTop: '100px'
     },
     root_loading: {
         width: '100vw',
@@ -62,9 +91,20 @@ const useStyles = makeStyles((theme) => ({
     },
 
 }));
+const CustomTooltip = styled(({ className, ...props }) => (
+    <Tooltip {...props} classes={{ popper: className }} />
+))(({ theme }) => ({
+    [`& .${tooltipClasses.tooltip}`]: {
+        backgroundColor: "#DC9777",
+        color: 'rgba(0, 0, 0, 0.87)',
+        boxShadow: theme.shadows[1],
+        fontFamily: 'Montserrat',
+        fontSize: 13,
+    },
+}));
 
 
-
+const ContextContainer = createContext(null)
 
 function App() {
     const classes = useStyles();
@@ -72,6 +112,22 @@ function App() {
     const [loading, setLoading] = useState(true)
     const [opacity, setOpacity] = useState(false)
 
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+    const handleScroll = () => {
+        const position = window.pageYOffset;
+        console.log(position)
+        setScrollPosition(position);
+    };
+
+    useEffect(() => {
+        if (window.location.href.includes("/#")) {window.location.href= window.location.href.substring(0, window.location.href.indexOf('/#'));}
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll);
+        };
+    }, []);
     setTimeout(() => {
         setOpacity(true)
     }, 2500);
@@ -82,15 +138,29 @@ function App() {
 
     if (loading) {
         return <div className={classes.root_loading}>
+
                 <img className={opacity ? classes.logo_loading_op : classes.logo_loading} src={logo_animated} />
         </div>
     }
 
 
+    /*
+    <div id={'experience'} className={classes.container}>
+        <Experience />
+    </div>
+     */
     return (
         <>
             <ThemeProvider theme={theme}>
-                <NavBar />
+                <div className={classes.media}>
+                    <CustomTooltip title="Github" placement="right">
+                        <img className={classes.image} src={github} alt={'profile pic'}/>
+                    </CustomTooltip>
+                    <div className={classes.bar}></div>
+                </div>
+                <ContextContainer.Provider value={{scrollPosition}}>
+                    <NavBar ContextContainer={ContextContainer} />
+                </ContextContainer.Provider>
                 <div className={classes.root}>
                     <div id={'hello'} className={classes.container}>
                         <Hello />
@@ -98,10 +168,6 @@ function App() {
                     <div id={'aboutMe'} className={classes.container}>
                         <AboutMe />
                     </div>
-                    <div id={'experience'} className={classes.container}>
-                        <Experience />
-                    </div>
-
                     <div id={'projects'} className={classes.container}>
                         <Projects />
                     </div>
