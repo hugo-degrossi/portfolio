@@ -39,7 +39,10 @@ const useStyles = makeStyles((theme) => ({
         display: "flex",
         justifyContent: "end",
         alignItems: "center",
-        flexDirection: "column"
+        flexDirection: "column",
+        "@media (max-width: 800px)": {
+            display:'none'
+        }
     },
     image: {
         width: "30px",

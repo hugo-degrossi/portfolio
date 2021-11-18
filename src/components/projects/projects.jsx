@@ -7,7 +7,7 @@ import FadeInSection from "../fadeInSection";
 import {HashLink} from "react-router-hash-link";
 import {ReactSVG} from "react-svg";
 import ProjectCard from "./projectCard";
-
+import GitHubIcon from '@mui/icons-material/GitHub';
 import PP from "../../media/profilpic.jpg"
 import portfolio from "../../media/portfolio.png"
 import LinkIcon from '@mui/icons-material/Link';
@@ -100,15 +100,35 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
         '&:hover': {
             "& $image_box": {
+                transform: "rotate(4deg)",
+
             },
             "& $box": {
+                transform: "rotate(4deg)",
                 opacity: 0.7
             },
         }
     },
     placeholder: {
-        maxWidth: "30%",
+        width: "200px",
         aspectRatio: "1",
+
+
+        "@media (max-width: 2250px)": {
+            width: "190px",
+        },
+        "@media (max-width: 1850px)": {
+            width: "180px",
+        },
+        "@media (max-width: 1450px)": {
+            width: "170px",
+        },
+        "@media (max-width: 1150px)": {
+            width: "150px",
+        },
+        "@media (max-width: 950px)": {
+            display: "none"
+        },
     },
     image_box: {
         backgroundSize: "cover",
@@ -120,10 +140,25 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
         top: "20px",
         left: "-20px",
-        maxWidth: "30%",
-        height: "100%",
+        width: "200px",
         aspectRatio: "1",
         zIndex: 2,
+
+        "@media (max-width: 2250px)": {
+            width: "190px",
+        },
+        "@media (max-width: 1850px)": {
+            width: "180px",
+        },
+        "@media (max-width: 1450px)": {
+            width: "170px",
+        },
+        "@media (max-width: 1150px)": {
+            width: "150px",
+        },
+        "@media (max-width: 950px)": {
+            display: "none"
+        },
     },
     box: {
         position: "absolute",
@@ -132,8 +167,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: theme.palette.primary.main,
         top: "20px",
         left: "-20px",
-        maxWidth: "30%",
-        height: "100%",
+        width: "200px",
         aspectRatio: "1",
         opacity: 0,
         zIndex: 4,
@@ -144,14 +178,35 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.info.main,
         '&:hover' : {
             cursor: 'pointer'
-        }
+        },
+
+
+        "@media (max-width: 2250px)": {
+            width: "190px",
+        },
+        "@media (max-width: 1850px)": {
+            width: "180px",
+        },
+        "@media (max-width: 1450px)": {
+            width: "170px",
+        },
+        "@media (max-width: 1150px)": {
+            width: "150px",
+        },
+        "@media (max-width: 950px)": {
+            display: "none"
+        },
     },
     card_content: {
         padding: "20px",
         width: '80%',
         display: "flex",
         flexDirection: "column",
-        justifyContent: "space-between"
+        justifyContent: "space-between",
+
+        "@media (max-width: 950px)": {
+            width: '100%',
+        },
     },
     name: {
         fontWeight: "bold",
@@ -179,10 +234,20 @@ const useStyles = makeStyles((theme) => ({
     actions: {
         display: "flex",
         flexDirection: "row",
-        justifyContent: "end"
+        justifyContent: "end",
 
     },
-    btn: {
+    btn1: {
+        fontFamily: 'Montserrat !important',
+        fontWeight: "bold !important",
+        display:'none !important',
+        marginRight: '15px !important',
+        "@media (max-width: 950px)": {
+            display:'flex !important',
+            alignItems: 'center !important',
+        },
+    },
+    btn2: {
         fontFamily: 'Montserrat !important',
         fontWeight: "bold !important"
     },
@@ -232,9 +297,14 @@ export default function Projects() {
                                     <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
 
                                     <div className={classes.actions}>
-                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
-                                            See on Github
+                                        <Button className={classes.btn1} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="contained">
+                                            <LinkIcon />
                                         </Button>
+                                        <CustomTooltip title="Check on GitHub" placement="top">
+                                            <Button className={classes.btn2} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                                <GitHubIcon />
+                                            </Button>
+                                        </CustomTooltip>
                                     </div>
 
                                 </div>
@@ -254,9 +324,14 @@ export default function Projects() {
                                     <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
 
                                     <div className={classes.actions}>
-                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
-                                            See on Github
+                                        <Button className={classes.btn1} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="contained">
+                                            <LinkIcon />
                                         </Button>
+                                        <CustomTooltip title="Check on GitHub" placement="top">
+                                            <Button className={classes.btn2} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                                <GitHubIcon />
+                                            </Button>
+                                        </CustomTooltip>
                                     </div>
 
                                 </div>
@@ -276,9 +351,14 @@ export default function Projects() {
                                     <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
 
                                     <div className={classes.actions}>
-                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
-                                            See on Github
+                                        <Button className={classes.btn1} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="contained">
+                                            <LinkIcon />
                                         </Button>
+                                        <CustomTooltip title="Check on GitHub" placement="top">
+                                            <Button className={classes.btn2} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                                <GitHubIcon />
+                                            </Button>
+                                        </CustomTooltip>
                                     </div>
 
                                 </div>
@@ -298,9 +378,14 @@ export default function Projects() {
                                     <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
 
                                     <div className={classes.actions}>
-                                        <Button className={classes.btn} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
-                                            See on Github
+                                        <Button className={classes.btn1} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="contained">
+                                            <LinkIcon />
                                         </Button>
+                                        <CustomTooltip title="Check on GitHub" placement="top">
+                                            <Button className={classes.btn2} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="outlined">
+                                                <GitHubIcon />
+                                            </Button>
+                                        </CustomTooltip>
                                     </div>
 
                                 </div>
