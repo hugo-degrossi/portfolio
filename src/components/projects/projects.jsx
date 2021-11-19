@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
             },
             "& $box": {
                 transform: "rotate(4deg)",
-                opacity: 0.7
+                opacity: 0.4
             },
         }
     },
@@ -177,7 +177,8 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
         color: theme.palette.info.main,
         '&:hover' : {
-            cursor: 'pointer'
+            cursor: 'pointer',
+            opacity: 0.7 + ' !important'
         },
 
 
@@ -215,7 +216,7 @@ const useStyles = makeStyles((theme) => ({
     },
     description: {
         marginTop: "10px",
-        marginLeft: "10px",
+        paddingLeft: '10px',
         color: theme.palette.text.main,
         opacity: 0.75,
         fontSize: '1rem',
@@ -294,7 +295,7 @@ export default function Projects() {
                                 <div className={classes.placeholder} />
                                 <div className={classes.card_content}>
                                     <div className={classes.name}>Personal Portfolio</div>
-                                    <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span>.</div>
+                                    <div className={classes.description}>My personal portfolio developed using <span className={classes.highlighted}>React</span> & <span className={classes.highlighted}>Continuous Development</span>.</div>
 
                                     <div className={classes.actions}>
                                         <Button className={classes.btn1} onClick={() => {window.open("https://github.com/hugo-degrossi/portfolio", "_blank")}} variant="contained">

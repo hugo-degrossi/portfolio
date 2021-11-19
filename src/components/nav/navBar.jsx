@@ -105,7 +105,9 @@ function NavBar({ContextContainer}) {
                 </FadeInSection>
                 <FadeInSection waitingTime={1000}>
                     <li className={classes.link}>
-                        <a><span className={classes.number}>03.</span><span className={classes.text}>Contact Me.</span></a>
+                        <HashLink smooth to="#contact" className={classes.hashLink}>
+                            <span className={classes.number}>03.</span><span className={classes.text}>Contact Me.</span>
+                        </HashLink>
                     </li>
                 </FadeInSection>
                 </Router>

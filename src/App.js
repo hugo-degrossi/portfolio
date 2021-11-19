@@ -13,6 +13,7 @@ import linkedin from  "./media/icons/linkedin.png"
 import Tooltip from '@mui/material/Tooltip';
 import styled from "@emotion/styled";
 import FadeInSection from "./components/fadeInSection";
+import Contact from "./components/contact/contact";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -92,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 const CustomTooltip = styled(({ className, ...props }) => (
-    <Tooltip {...props} classes={{ popper: className }} />
+    <Tooltip {...props} classes={{ popper: className }}/>
 ))(({ theme }) => ({
     [`& .${tooltipClasses.tooltip}`]: {
         backgroundColor: "#b1775f",
@@ -185,6 +186,9 @@ function App() {
                     </div>
                     <div id={'projects'} className={classes.container}>
                         <Projects />
+                    </div>
+                    <div id={'contact'} className={classes.container}>
+                        <Contact />
                     </div>
                 </div>
             </ThemeProvider>
