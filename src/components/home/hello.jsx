@@ -160,46 +160,11 @@ function Hello() {
                 </ FadeInSection>
 
             </div>
+            <FadeInSection waitingTime={baseTimer + 200}>
             <h1 className={classes.name}>
-                <FadeInSection waitingTime={baseTimer + 100}>
-                    H
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 125}>
-                    u
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 150}>
-                    g
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 175}>
-                    o
-                    <span className={classes.space}/>
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 200}>
-                    D
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 225}>
-                    e
-                    <span className={classes.space}/>
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 250}>
-                    G
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 275}>
-                    r
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 300}>
-                    o
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 325}>
-                    s
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 350}>
-                    s
-                </ FadeInSection>
-                <FadeInSection waitingTime={baseTimer + 375}>
-                    i
-                </ FadeInSection>
+                    Hugo De Grossi
             </h1>
+            </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 400}>
             <div className={classes.title}>
                 Information Technology Student.
