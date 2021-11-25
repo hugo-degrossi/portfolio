@@ -1,9 +1,6 @@
-import React, {useState} from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
+import React from 'react';
+import { makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import {Box, Typography} from "@mui/material";
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles((theme) => ({
@@ -205,20 +202,9 @@ TabPanel.propTypes = {
     value: PropTypes.number.isRequired,
 };
 
-function a11yProps(index) {
-    return {
-        id: `vertical-tab-${index}`,
-        'aria-controls': `vertical-tabpanel-${index}`,
-    };
-}
 
 function Experience() {
     const classes = useStyles();
-    const [value, setValue] = React.useState(0);
-
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-    };
     return (
         <>
             <FadeInSection waitingTime={1500}>

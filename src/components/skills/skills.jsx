@@ -1,6 +1,5 @@
-import React, {useState} from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
-import FadeInSection from "../fadeInSection";
+import React from 'react';
+import { makeStyles } from '@mui/styles';
 import "../../style/skills.scss"
 import { ReactSVG } from 'react-svg'
 import AngularLogo from '../../media/icons/angularjs-plain.svg'
@@ -10,12 +9,10 @@ import CSharpLogo from '../../media/icons/csharp-plain.svg'
 import CLogo from '../../media/icons/c-plain.svg'
 import ReactLogo from '../../media/icons/react-original.svg'
 import DjangoLogo from '../../media/icons/django-plain.svg'
-import PhpLogo from '../../media/icons/php-plain.svg'
 import TypeScriptLogo from '../../media/icons/typescript-plain.svg'
 import PythonLogo from '../../media/icons/python-original.svg'
 import SymfonyLogo from '../../media/icons/symfony-original.svg'
 import RubyLogo from '../../media/icons/ruby-plain.svg'
-//import Logo from '../../media/icons/'
 
 const useStyles = makeStyles((theme) => ({
 

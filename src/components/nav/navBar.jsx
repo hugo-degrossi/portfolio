@@ -1,16 +1,10 @@
 import React, {useContext} from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
-import {Typography} from "@mui/material";
+import {makeStyles } from '@mui/styles';
 import AppBar from '@mui/material/AppBar';
 import logo from "../../h_logo.svg"
 import FadeInSection from "../fadeInSection";
 import {HashLink} from "react-router-hash-link";
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-} from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import {ReactSVG} from "react-svg";
 
 

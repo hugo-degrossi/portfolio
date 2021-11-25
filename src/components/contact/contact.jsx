@@ -1,9 +1,6 @@
 import React from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
-import {tooltipClasses} from "@mui/material";
+import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
-import styled from "@emotion/styled";
-import Tooltip from "@mui/material/Tooltip";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -68,18 +65,7 @@ const useStyles = makeStyles((theme) => ({
         }
     },
 }));
-const CustomTooltip = styled(({ className, ...props }) => (
-    <Tooltip {...props} classes={{ popper: className }} />
-))(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-        backgroundColor: "#DC9777",
-        color: 'rgba(0, 0, 0, 0.87)',
-        boxShadow: theme.shadows[1],
-        fontFamily: 'Montserrat',
-        fontSize: 13,
-        fontWeight: "bold"
-    },
-}));
+
 export default function Contact() {
     const classes = useStyles();
     //<LinkIcon fontSize={"large"} color={"info"}/>

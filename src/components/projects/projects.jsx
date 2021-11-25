@@ -1,17 +1,10 @@
 import React from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
-import {Button, tooltipClasses, Typography} from "@mui/material";
-import AppBar from '@mui/material/AppBar';
-import logo from "../../h_logo.svg"
+import {makeStyles } from '@mui/styles';
+import {Button, tooltipClasses} from "@mui/material";
 import FadeInSection from "../fadeInSection";
-import {HashLink} from "react-router-hash-link";
-import {ReactSVG} from "react-svg";
-import ProjectCard from "./projectCard";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import PP from "../../media/profilpic.jpg"
 import portfolio from "../../media/portfolio.png"
 import LinkIcon from '@mui/icons-material/Link';
-import Typewriter from "typewriter-effect";
 import styled from "@emotion/styled";
 import Tooltip from "@mui/material/Tooltip";
 

@@ -1,6 +1,5 @@
 import React from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
-import {Typography} from "@mui/material";
+import { makeStyles } from '@mui/styles';
 import Typewriter from 'typewriter-effect';
 import FadeInSection from "../fadeInSection";
 import {Button} from "@mui/material";
@@ -142,7 +141,7 @@ function Hello() {
 
             <div className={classes.hello}>
 
-                <FadeInSection waitingTime={baseTimer + 0}>
+                <FadeInSection waitingTime={baseTimer}>
                     <Typewriter
 
                         onInit={(typewriter) => {
