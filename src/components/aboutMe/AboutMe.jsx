@@ -1,19 +1,7 @@
-import React, {useState} from 'react';
-import { ThemeProvider, makeStyles } from '@mui/styles';
+import React from 'react';
+import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
-import {DATA} from "../../data/data"
 import PP from "../../media/profilpic.jpg"
-import ReactLogo from "../../media/icons/react-original.svg";
-import AngularLogo from "../../media/icons/angularjs-plain.svg";
-import TypeScriptLogo from "../../media/icons/typescript-plain.svg";
-import JavascriptLogo from "../../media/icons/javascript-plain.svg";
-import PythonLogo from "../../media/icons/python-original.svg";
-import DjangoLogo from "../../media/icons/django-plain.svg";
-import SymfonyLogo from "../../media/icons/symfony-original.svg";
-import RubyLogo from "../../media/icons/ruby-plain.svg";
-import CLogo from "../../media/icons/c-plain.svg";
-import CSharpLogo from "../../media/icons/csharp-plain.svg";
-import JavaLogo from "../../media/icons/java-plain.svg";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -183,7 +171,7 @@ function AboutMe() {
                             </div>
                             <div className={classes.image_container}>
                                     <div className={classes.image_box} />
-                                    <img className={classes.image} src={PP} alt={'profile pic'}/>
+                                    <img className={classes.image} src={PP} alt={'Hugo De Grossi Profile Pic'}/>
                                     <div className={classes.image_over} />
                             </div>
 
