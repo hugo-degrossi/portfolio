@@ -15,7 +15,7 @@ import styled from "@emotion/styled";
 import FadeInSection from "./components/fadeInSection";
 import Contact from "./components/contact/contact";
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
     root: {
         padding: '0 30vw 20px 30vw',
         "@media (max-width: 1450px)": {
@@ -143,7 +143,7 @@ function App() {
     if (loading) {
         return <div className={classes.root_loading}>
 
-                <img className={opacity ? classes.logo_loading_op : classes.logo_loading} src={logo_animated} />
+                <img className={opacity ? classes.logo_loading_op : classes.logo_loading} src={logo_animated} alt={"loading"} />
         </div>
     }
 
