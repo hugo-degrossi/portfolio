@@ -3,7 +3,8 @@ import {makeStyles } from '@mui/styles';
 import {Button, tooltipClasses} from "@mui/material";
 import FadeInSection from "../fadeInSection";
 import GitHubIcon from '@mui/icons-material/GitHub';
-import portfolio from "../../media/portfolio.png"
+import portfolio from "../../media/portfolio.png";
+import starRunner from "../../media/star-runner.png";
 import LinkIcon from '@mui/icons-material/Link';
 import styled from "@emotion/styled";
 import Tooltip from "@mui/material/Tooltip";
@@ -279,7 +280,7 @@ export default function Projects() {
                     <div className={classes.projects_container}>
                         <FadeInSection waitingTime={1500}>
                             <div className={classes.project_card}>
-                                <div className={classes.image_box} style={{backgroundImage: `url(${portfolio})`}}/>
+                                <div className={classes.image_box} style={{backgroundImage: `url(${starRunner})`}}/>
                                 <CustomTooltip title="Looks like you're already here ;)" placement="top">
                                     <div className={classes.box}>
                                         <LinkIcon fontSize={"large"} color={"info"}/>
@@ -306,7 +307,7 @@ export default function Projects() {
                         </FadeInSection>
                         <FadeInSection waitingTime={1500}>
                             <div className={classes.project_card}>
-                                <div className={classes.image_box} style={{backgroundImage: `url(${portfolio})`}}/>
+                                <div className={classes.image_box} style={{backgroundImage: `url(${starRunner})`}}/>
                                 <CustomTooltip title="Looks like you're already here ;)" placement="top">
                                     <div className={classes.box}>
                                         <LinkIcon fontSize={"large"} color={"info"}/>
