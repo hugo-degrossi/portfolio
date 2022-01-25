@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "Monteserrat";
+  src: url("./fonts/Montserrat-Regular.ttf") format("ttf");
+}
+@font-face {
+  font-family: "Consolas";
+  src: url("./fonts/CONSOLA.ttf") format("ttf");
+}
+
+
 body {
   margin: 0;
   font-family: 'Montserrat', 'Roboto', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
