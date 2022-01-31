@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.main,
         fontSize: '1.4rem',
         marginBottom: '3px',
-        fontFamily: "consolas",
+        fontFamily: "Consolas",
         "@media (max-width: 1450px)": {
             fontSize: '1.3rem',
         },

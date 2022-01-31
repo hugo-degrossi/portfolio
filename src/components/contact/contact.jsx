@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme) => ({
     number: {
         color: theme.palette.primary.main,
         fontSize: '1.4rem',
-        fontFamily: "consolas",
+        fontFamily: "Consolas",
         marginRight: '4px',
         "@media (max-width: 1450px)": {
             fontSize: '1.3rem',

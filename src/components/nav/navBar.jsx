@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
     number: {
         color: theme.palette.primary.main,
-        fontFamily: "consolas",
+        fontFamily: "Consolas",
         marginRight: '5px'
     },
     hashLink: {
