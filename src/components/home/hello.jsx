@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.main,
         fontSize: '3.4rem',
         marginBottom: '5px',
-        fontWeight: "bold",
+        fontWeight: "600",
         display: "flex",
         flexDirection: 'row',
         "@media (max-width: 1450px)": {
@@ -54,7 +54,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.text.main,
         opacity: 0.5,
         fontSize: '3.1rem',
-        fontWeight: "bold",
+        fontWeight: "600",
         marginBottom: '2px',
         textTransform: 'uppercase',
         "@media (max-width: 1450px)": {

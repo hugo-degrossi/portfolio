@@ -61,23 +61,13 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-/*
-
-                <FadeInSection waitingTime={750}>
-                    <li className={classes.link}>
-                        <HashLink smooth to="#experience" className={classes.hashLink}>
-                            <span className={classes.number}>02.</span><span className={classes.text}>Work Experience.</span>
-                        </HashLink>
-                    </li>
-                </FadeInSection>
- */
 
 function NavBar({ContextContainer}) {
     const classes = useStyles();
     const {scrollPosition} = useContext(ContextContainer);
     // State
     return (
-        <AppBar className={scrollPosition > 50 ? [classes.navbar, classes.active] : [classes.navbar]}>
+        <AppBar className={scrollPosition > 50 ? classes.navbar + ' ' + classes.active : classes.navbar}>
             <FadeInSection waitingTime={0}>
                     <ReactSVG className={classes.logo_box} src={logo} onClick={() => {window.scrollTo({top: 0, behavior: 'smooth'})}}/>
             </FadeInSection>

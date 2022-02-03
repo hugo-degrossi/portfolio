@@ -15,12 +15,9 @@ import SymfonyLogo from '../../media/icons/symfony-original.svg'
 import RubyLogo from '../../media/icons/ruby-plain.svg'
 
 const useStyles = makeStyles((theme) => ({
-
-
     skill_box:{
         width: '30px',
         height: '30px',
-        filter:' invert(88%) sepia(912%) saturate(300%) hue-rotate(320deg) brightness(100%) contrast(55%)'
     }
 
 }));
@@ -37,7 +34,6 @@ const skillSet = [
     {name: 'C', icon: CLogo},
     {name: 'C#', icon: CSharpLogo},
     {name: 'Java', icon: JavaLogo},
-
 ]
 
 
