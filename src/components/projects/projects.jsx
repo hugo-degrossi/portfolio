@@ -54,18 +54,15 @@ const useStyles = makeStyles((theme) => ({
         fontFamily: "Consolas",
         marginRight: '4px',
         "@media (max-width: 1450px)": {
-            fontSize: '1.3rem',
+            fontSize: '1.4rem',
         },
         "@media (max-width: 1150px)": {
-            fontSize: '1.2rem',
+            fontSize: '1.3rem',
             marginRight: '10px',
         },
         "@media (max-width: 950px)": {
-            fontSize: '1.1rem',
+            fontSize: '1.2rem',
         },
-        "@media (max-width: 800px)": {
-            fontSize: '1rem',
-        }
     },
     projects: {
         display: "grid",
