@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "Consolas";
+  src: url("./fonts/Consolas.ttf") format("ttf"),
+  url("./fonts/Consolas.woff") format("woff");
+
+}
+
 body {
   margin: 0;
   font-family: 'Montserrat', 'Roboto', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
