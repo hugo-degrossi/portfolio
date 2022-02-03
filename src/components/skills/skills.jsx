@@ -44,12 +44,12 @@ function Skills() {
                 <div className="slider">
                     <div className="slide-track">
                         {skillSet.map((skill) => {
-                            return <div className="slide">
+                            return <div key={skill.name} className="slide">
                                 <ReactSVG className={classes.skill_box} src={skill.icon} />
                             </div>
                         })}
                         {skillSet.map((skill) => {
-                            return <div className="slide">
+                            return <div key={skill.name} className="slide">
                                 <ReactSVG className={classes.skill_box} src={skill.icon} />
                             </div>
                         })}
