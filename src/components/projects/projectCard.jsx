@@ -276,12 +276,12 @@ export default function ProjectCard({image, name, desc, git, web}) {
 
                     <div className={classes.actions}>
                         <CustomTooltip title="Check the source-code!" placement="top">
-                            <Button className={classes.btn2} onClick={() => {window.open({git}, "_blank")}} variant="outlined">
+                            <Button className={classes.btn2} onClick={() => {window.open(git, "_blank")}} variant="outlined">
                                 <GitHubIcon />
                             </Button>
                         </CustomTooltip>
                         <CustomTooltip title="Go to the project!" placement="top">
-                            <Button className={classes.btn1} onClick={() => {window.open({web}, "_blank")}} variant="contained">
+                            <Button className={classes.btn1} onClick={() => {window.open(web, "_blank")}} variant="contained">
                                 <LinkIcon />
                             </Button>
                         </CustomTooltip>

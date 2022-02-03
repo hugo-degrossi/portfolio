@@ -1,7 +1,6 @@
 import React, {createContext, useEffect, useState} from 'react';
 import theme from './theme';
 import { ThemeProvider } from '@mui/material/styles';
-import {tooltipClasses} from "@mui/material";
 import Hello from "./components/home/hello";
 import {makeStyles} from "@mui/styles";
 import NavBar from "./components/nav/navBar";
@@ -10,18 +9,17 @@ import Projects from "./components/projects/projects";
 import logo_animated from "./h_logo_animated_4.svg"
 import github from  "./media/icons/github.png"
 import linkedin from  "./media/icons/linkedin.png"
-import Tooltip from '@mui/material/Tooltip';
-import styled from "@emotion/styled";
 import FadeInSection from "./components/fadeInSection";
 import Contact from "./components/contact/contact";
+import {CustomTooltip} from "./components/utils/customComponents";
 
 const useStyles = makeStyles(() => ({
     root: {
         padding: '0 30vw 20px 30vw',
-        "@media (max-width: 1450px)": {
+        "@media (max-width: 1550px)": {
             padding: '0 25vw 20px 25vw',
         },
-        "@media (max-width: 1150px)": {
+        "@media (max-width: 1250px)": {
             padding: '0 20vw 20px 20vw',
         },
         "@media (max-width: 950px)": {
@@ -92,18 +90,6 @@ const useStyles = makeStyles(() => ({
     },
 
 }));
-const CustomTooltip = styled(({ className, ...props }) => (
-    <Tooltip {...props} classes={{ popper: className }}/>
-))(({ theme }) => ({
-    [`& .${tooltipClasses.tooltip}`]: {
-        backgroundColor: "#b1775f",
-        color: 'rgba(0, 0, 0, 0.87)',
-        boxShadow: theme.shadows[1],
-        fontFamily: 'Montserrat',
-        fontSize: 13,
-        fontWeight: "bold"
-    },
-}));
 
 
 const ContextContainer = createContext(null)
@@ -147,11 +133,6 @@ function App() {
     }
 
 
-    /*
-    <div id={'experience'} className={classes.container}>
-        <Experience />
-    </div>
-     */
     return (
         <>
             <ThemeProvider theme={theme}>
