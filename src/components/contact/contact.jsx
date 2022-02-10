@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
-
+import {ContactUs} from "./contactForm";
 const useStyles = makeStyles((theme) => ({
     root: {
         marginBottom: '20vh',
@@ -74,9 +74,13 @@ export default function Contact() {
                         <span className={classes.title_text}>Contact Me</ span>
                     </div>
                     <div className={classes.divider} />
+                    <ContactUs></ContactUs>
+
                 </FadeInSection>
             </div>
         </>
     );
 }
+
+
 

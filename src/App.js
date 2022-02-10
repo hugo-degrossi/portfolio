@@ -104,6 +104,7 @@ function App() {
 
 
     const [scrollPosition, setScrollPosition] = useState(0);
+
     const handleScroll = () => {
         const position = window.pageYOffset;
         setScrollPosition(position);
@@ -112,11 +113,12 @@ function App() {
     useEffect(() => {
         if (window.location.href.includes("/#")) {window.location.href= window.location.href.substring(0, window.location.href.indexOf('/#'));}
         window.addEventListener('scroll', handleScroll, { passive: true });
-
+        // fetch data for selected user
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
+
     setTimeout(() => {
         setOpacity(true)
     }, 2500);

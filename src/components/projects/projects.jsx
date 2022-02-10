@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
-import portfolio from "../../media/portfolio.png";
+import portfolio from "../../media/portfolio_filled.png";
 import ProjectCard from "./projectCard";
 
 
