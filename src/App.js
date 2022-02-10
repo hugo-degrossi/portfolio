@@ -68,7 +68,6 @@ const useStyles = makeStyles(() => ({
         paddingTop: '100px'
     },
     root_loading: {
-        width: '100vw',
         height: '100vh',
         display: 'flex',
         alignItems: "center",
@@ -129,7 +128,6 @@ function App() {
 
     if (loading) {
         return <div className={classes.root_loading}>
-
                 <img className={opacity ? classes.logo_loading_op : classes.logo_loading} src={logo_animated} alt={"loading"} />
         </div>
     }
