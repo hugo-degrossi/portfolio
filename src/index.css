@@ -57,7 +57,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #2F1919;
+  overflow-y: scroll;
+  scrollbar-color: #0A4C95 #C2D2E4 !important;
 }
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',

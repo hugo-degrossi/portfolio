@@ -4,12 +4,12 @@ const theme = createTheme({
     spacing: 4,
     typography: {
         fontFamily: [
-            'Daytona',
+            'Montserrat',
             'Open Sans',
         ].join(','),
         h1: {
             fontSize: '5rem',
-            fontFamily: 'Daytona',
+            fontFamily: 'Montserrat',
         },
         h2: {
             fontSize: '3.5rem',
@@ -31,6 +31,7 @@ const theme = createTheme({
             third: '#59342E',
             vibrant: '#FFBA7D',
             contrastText: '#2F1919',
+            fourth: '#a9735b', // Peach Bellini
         },
         accent: {
             main: '#5C5251',
