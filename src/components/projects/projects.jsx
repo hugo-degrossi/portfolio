@@ -1,7 +1,7 @@
 import React from 'react';
 import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
-import portfolio from "../../media/portfolio_filled.png";
+import portfolio from "../../media/portfolio.svg";
 import ProjectCard from "./projectCard";
 
 
@@ -67,7 +67,7 @@ const useStyles = makeStyles((theme) => ({
     projects: {
         display: "grid",
         gridTemplateRows: "1fr",
-        gridGap: "50px",
+        gridGap: "20px",
         marginTop: "30px",
         "@media (max-width: 1150px)": {
             gridGap: "20px",
@@ -95,26 +95,6 @@ export default function Projects() {
                     </FadeInSection>
 
                     <div className={classes.projects}>
-                        <FadeInSection waitingTime={1500}>
-                            <ProjectCard
-                                image={portfolio}
-                                name={"Personal Portfolio"}
-                                desc={<>My personal portfolio developed using <span className={classes.highlighted}>React</span> & <span className={classes.highlighted}>Continuous Development</span>.</>}
-                                git={"https://github.com/hugo-degrossi/portfolio"}
-                                web={"https://hugo-degrossi.fr/"}
-                            />
-                        </FadeInSection>
-
-                        <FadeInSection waitingTime={1500}>
-                            <ProjectCard
-                                image={portfolio}
-                                name={"Personal Portfolio"}
-                                desc={<>My personal portfolio developed using <span className={classes.highlighted}>React</span> & <span className={classes.highlighted}>Continuous Development</span>.</>}
-                                git={"https://github.com/hugo-degrossi/portfolio"}
-                                web={"https://hugo-degrossi.fr/"}
-                            />
-                        </FadeInSection>
-
                         <FadeInSection waitingTime={1500}>
                             <ProjectCard
                                 image={portfolio}
