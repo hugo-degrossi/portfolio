@@ -1,10 +1,10 @@
 import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
-import {Box, Button, Card, CircularProgress, styled, TextField} from "@mui/material";
+import {Box, Button, CircularProgress, styled, TextField} from "@mui/material";
 import {makeStyles } from '@mui/styles';
 import theme from "../../theme";
 import {CustomTooltip} from "../utils/customComponents";
-import {WarningAmberRounded, TaskAltRounded} from '@mui/icons-material';
+import {TaskAltRounded} from '@mui/icons-material';
 
 const useStyles = makeStyles((theme) => ({
     input: {
@@ -12,6 +12,10 @@ const useStyles = makeStyles((theme) => ({
     },
     label: {
         fontWeight: '600 !important'
+    },
+    form: {
+        display: 'grid',
+        gridGap: '12px'
     },
     center: {
         display: "flex",
@@ -158,26 +162,25 @@ export const ContactUs = () => {
                     {status !== null && status ? <li><TaskAltRounded /> <span>MESSAGE SENT, I WILL GET BACK TO YOU AS SOON AS POSSIBLE</span></li>: null}
                 </ul>
             </div>
-            <form ref={form} onSubmit={sendEmail} className={classes.project_card}>
+            <form ref={form} onSubmit={sendEmail} className={classes.form}>
                 <CssTextField label="Full Name" fullWidth name="user_name" value={name} onChange={handleNameChange}
-                              InputProps={{ className: classes.input,}}
                               InputLabelProps={{className: classes.label,}}
                 />
                 <CssTextField label="Email" fullWidth name="user_email" value={email} onChange={handleEmailChange}
-                              InputProps={{ className: classes.input,}}
                               InputLabelProps={{className: classes.label,}}
                 />
                 <CssTextField label="Message" fullWidth multiline rows={5} name="message" value={message} onChange={handleMessageChange}
-                              InputProps={{ className: classes.input,}}
                               InputLabelProps={{className: classes.label,}}
                 />
                 <div className={classes.center}>
 
-                    <CustomTooltip title={<ul className={classes.ul}>
-                        {name === '' ? <li>- TO SUBMIT PLEASE WRITE YOUR NAME</li> : null}
-                        {email === '' ? <li>- TO SUBMIT PLEASE WRITE YOUR EMAIL</li> : !validEmail.test(email) ? <li>- INVALID EMAIL</li> : null}
-                        {message === '' ? <li>- TO SUBMIT PLEASE WRITE A MESSAGE</li> : null}
-                    </ul>
+                    <CustomTooltip title={
+                        <ul className={classes.ul}>
+                            {name === '' ? <li>- TO SUBMIT PLEASE WRITE YOUR NAME</li> : null}
+                            {email === '' ? <li>- TO SUBMIT PLEASE WRITE YOUR EMAIL</li> : !validEmail.test(email) ? <li>- INVALID EMAIL</li> : null}
+                            {message === '' ? <li>- TO SUBMIT PLEASE WRITE A MESSAGE</li> : null}
+                            {message === '' || !validEmail.test(email) || email === '' || name === '' ? null : <li> SUBMIT </li>}
+                        </ul>
                     } placement="right">
                     <Box sx={{ m: 1, position: 'relative' }}>
                         <Button className={classes.submit_btn} variant="outlined" type="submit" value="Send" disabled={loading || name === '' || email === '' || message === '' || !validEmail.test(email)} classes={{ disabled: classes.disabledButton }}>Submit</Button>
