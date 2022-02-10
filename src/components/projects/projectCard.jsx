@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "4px",
         position: "relative",
         backgroundColor: "#381E1E",
-        minHeight: "180px",
+        minHeight: "160px",
         boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
         '&:hover': {
             "& $image_box": {
@@ -34,48 +34,25 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     placeholder: {
-        width: "200px",
+        width: "140px",
         aspectRatio: "1",
 
 
         "@media (max-width: 2250px)": {
-            width: "190px",
+            width: "140px",
         },
         "@media (max-width: 1850px)": {
-            width: "180px",
+            width: "140px",
         },
         "@media (max-width: 1450px)": {
-            width: "170px",
+            width: "140px",
         },
         "@media (max-width: 1150px)": {
-            width: "150px",
+            width: "140px",
         },
         "@media (max-width: 950px)": {
             display: "none"
         },
-    },
-    fab:{
-        position: "absolute !important",
-        zIndex: 3,
-        bottom: '-10px',
-        left: '150px',
-        backgroundColor: theme.palette.primary.main,
-        "@media (max-width: 2250px)": {
-            left: "140px",
-        },
-        "@media (max-width: 1850px)": {
-            left: "130px",
-        },
-        "@media (max-width: 1450px)": {
-            left: "120px",
-        },
-        "@media (max-width: 1150px)": {
-            left: "110px",
-        },
-        "@media (max-width: 950px)": {
-            display: "none !important"
-        },
-
     },
     image_box: {
         backgroundSize: "cover",
@@ -84,25 +61,13 @@ const useStyles = makeStyles((theme) => ({
         position: "absolute",
         borderRadius: "4px",
         transition: "all 0.3s",
+        backgroundColor: '#2f1919',
         boxShadow: '0 1px 3px rgba(0,0,0,0.7), 0 1px 2px rgba(0,0,0,0.7)',
-        top: "20px",
+        top: "10px",
         left: "-20px",
-        width: "200px",
+        width: "140px",
         aspectRatio: "1",
         zIndex: 2,
-
-        "@media (max-width: 2250px)": {
-            width: "190px",
-        },
-        "@media (max-width: 1850px)": {
-            width: "180px",
-        },
-        "@media (max-width: 1450px)": {
-            width: "170px",
-        },
-        "@media (max-width: 1150px)": {
-            width: "150px",
-        },
         "@media (max-width: 950px)": {
             display: "none"
         },
@@ -113,9 +78,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "6px",
         transition: "all 0.3s",
         backgroundColor: theme.palette.primary.main,
-        top: "20px",
+        top: "10px",
         left: "-20px",
-        width: "200px",
+        width: "136px",
         aspectRatio: "1",
         zIndex: 1,
         display: "flex",
@@ -123,18 +88,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         fontWeight: 'bold',
         color: theme.palette.info.main,
-        "@media (max-width: 2250px)": {
-            width: "190px",
-        },
-        "@media (max-width: 1850px)": {
-            width: "180px",
-        },
-        "@media (max-width: 1450px)": {
-            width: "170px",
-        },
-        "@media (max-width: 1150px)": {
-            width: "150px",
-        },
         "@media (max-width: 950px)": {
             display: "none"
         },
@@ -145,9 +98,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "6px",
         transition: "all 0.3s",
         backgroundColor: theme.palette.primary.main,
-        top: "20px",
+        top: "10px",
         left: "-20px",
-        width: "196px",
+        width: "136px",
         aspectRatio: "1",
         zIndex: 1,
         display: "flex",
@@ -155,18 +108,6 @@ const useStyles = makeStyles((theme) => ({
         alignItems: "center",
         fontWeight: 'bold',
         color: theme.palette.info.main,
-        "@media (max-width: 2250px)": {
-            width: "190px",
-        },
-        "@media (max-width: 1850px)": {
-            width: "180px",
-        },
-        "@media (max-width: 1450px)": {
-            width: "170px",
-        },
-        "@media (max-width: 1150px)": {
-            width: "150px",
-        },
         "@media (max-width: 950px)": {
             display: "none"
         },
@@ -178,9 +119,9 @@ const useStyles = makeStyles((theme) => ({
         borderRadius: "6px",
         transition: "all 0.3s",
         backgroundColor: theme.palette.primary.main,
-        top: "20px",
+        top: "10px",
         left: "-20px",
-        width: "196px",
+        width: "136px",
         aspectRatio: "1",
         zIndex: 1,
         display: "flex",
@@ -189,16 +130,16 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold',
         color: theme.palette.info.main,
         "@media (max-width: 2250px)": {
-            width: "190px",
+            width: "136px",
         },
         "@media (max-width: 1850px)": {
-            width: "180px",
+            width: "136px",
         },
         "@media (max-width: 1450px)": {
-            width: "170px",
+            width: "136px",
         },
         "@media (max-width: 1150px)": {
-            width: "150px",
+            width: "136px",
         },
         "@media (max-width: 950px)": {
             display: "none"
