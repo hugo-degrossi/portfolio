@@ -1,10 +1,11 @@
 import React, {useRef, useState} from 'react';
 import emailjs from '@emailjs/browser';
-import {Box, Button, CircularProgress, styled, TextField} from "@mui/material";
+import {Box, Button, CircularProgress} from "@mui/material";
 import {makeStyles } from '@mui/styles';
-import theme from "../../theme";
 import {CustomTooltip} from "../utils/customComponents";
+import {CssTextField} from "../utils/CssTextField";
 import {TaskAltRounded} from '@mui/icons-material';
+
 
 const useStyles = makeStyles((theme) => ({
     input: {
@@ -71,50 +72,6 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 
-const CssTextField = styled(TextField, theme)({
-    '& .MuiOutlinedInput-root': {
-        padding: '0',
-
-        '& fieldset': {
-            borderColor: 'transparent',
-        },
-        '&:hover fieldset': {
-            borderColor: 'transparent',
-        },
-        '&.Mui-focused fieldset': {
-            borderColor: theme.palette.primary.main,
-        },
-        '& input': {
-            backgroundColor: '#381e1e', //theme.palette.primary.second
-            color: theme.palette.primary.fourth,
-            transition: 'all 0.2s',
-            fontSize: '0.9rem',
-            fontWeight: '600 !important'
-        },
-        '&:hover input': {
-            color: theme.palette.primary.main,
-        },
-        '&.Mui-focused input': {
-            color: theme.palette.primary.main,
-        },
-
-        '& textarea': {
-            padding: '16.5px 14px',
-            backgroundColor: '#381e1e', //theme.palette.primary.second
-            color: theme.palette.primary.fourth,
-            transition: 'all 0.2s',
-            fontSize: '0.9rem',
-            margin: 0,
-            fontWeight: '600 !important'
-        },
-        '&:hover textarea': {
-            color: theme.palette.primary.main,
-        },
-        '&.Mui-focused textarea': {
-            color: theme.palette.primary.main,
-        },
-    },
-});
 
 
 export const validEmail = new RegExp(

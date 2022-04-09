@@ -52,6 +52,7 @@ const useStyles = makeStyles((theme) => ({
         color: theme.palette.primary.main,
         fontSize: '1.4rem',
         fontFamily: "Consolas",
+        fontWeight: 'bold',
         marginRight: '4px',
         "@media (max-width: 1450px)": {
             fontSize: '1.4rem',
@@ -79,6 +80,10 @@ const useStyles = makeStyles((theme) => ({
             gridGap: "10px",
         }
     },
+    highlighted: {
+        color: theme.palette.primary.main,
+        fontWeight: "bold"
+    }
 }));
 
 export default function Projects() {
@@ -98,8 +103,17 @@ export default function Projects() {
                         <FadeInSection waitingTime={1500}>
                             <ProjectCard
                                 image={portfolio}
+                                name={"Chatbot"}
+                                desc={<>A personal <span className={classes.highlighted}>RESTful API</span> developed with <span className={classes.highlighted}>Python</span>, <span className={classes.highlighted}>SpaCy</span> and <span className={classes.highlighted}>FastAPI</span> using <span className={classes.highlighted}>CI/CD</span> with <span className={classes.highlighted}>GitHub</span> and <span className={classes.highlighted}>Heroku</span>.</>}
+                                git={"https://github.com/hugo-degrossi/personal-chatbot"}
+                                web={"https://hugo-degrossi.fr/"}
+                            />
+                        </FadeInSection>
+                        <FadeInSection waitingTime={1500}>
+                            <ProjectCard
+                                image={portfolio}
                                 name={"Personal Portfolio"}
-                                desc={<>My personal portfolio developed using <span className={classes.highlighted}>React</span> & <span className={classes.highlighted}>Continuous Development</span>.</>}
+                                desc={<>My personal portfolio developed with <span className={classes.highlighted}>React</span> using <span className={classes.highlighted}>CI/CD</span> with <span className={classes.highlighted}>GitHub</span> and <span className={classes.highlighted}>Cloudflare Pages</span>.</>}
                                 git={"https://github.com/hugo-degrossi/portfolio"}
                                 web={"https://hugo-degrossi.fr/"}
                             />

@@ -58,7 +58,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #2F1919;
   overflow-y: scroll;
-  scrollbar-color: #0A4C95 #C2D2E4 !important;
 }
 
 
@@ -91,7 +90,7 @@ code {
 
 ::-webkit-scrollbar
 {
-  width: 7px;
+  width: 7px + ' !important';
   background-color: transparent;
 }
 

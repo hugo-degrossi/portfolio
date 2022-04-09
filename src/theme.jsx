@@ -23,7 +23,8 @@ const theme = createTheme({
     },
     palette: {
         background: {
-            default: '#2F1919'
+            default: '#2F1919',
+            second: '#381E1E'
         },
         primary: {
             main: '#DC9777', // Peach Bellini

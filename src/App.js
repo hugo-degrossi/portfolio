@@ -12,6 +12,7 @@ import linkedin from  "./media/icons/linkedin.png"
 import FadeInSection from "./components/fadeInSection";
 import Contact from "./components/contact/contact";
 import {CustomTooltip} from "./components/utils/customComponents";
+import Chatbot from './components/chatbot/chatbot';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -52,7 +53,7 @@ const useStyles = makeStyles(() => ({
         }
     },
     bar: {
-        marginTop: '5px',
+        marginTop: '10px',
         width: "2px",
         height: "140px",
         backgroundColor: "#b1775f",
@@ -87,6 +88,11 @@ const useStyles = makeStyles(() => ({
         transition: "all 1s",
         opacity: '0',
     },
+    chatbot_container: {
+        width: '100%',
+        height: '100%',
+        position: 'relative'
+    }
 
 }));
 
@@ -157,6 +163,7 @@ function App() {
                 <ContextContainer.Provider value={{scrollPosition}}>
                     <NavBar ContextContainer={ContextContainer} />
                 </ContextContainer.Provider>
+                
                 <div className={classes.root}>
                     <div id={'hello'} className={classes.container}>
                         <Hello />
@@ -170,6 +177,9 @@ function App() {
                     <div id={'contact'} className={classes.container}>
                         <Contact />
                     </div>
+                    <div className={classes.chatbot_container}>
+                        <Chatbot />
+                    </ div>
                 </div>
             </ThemeProvider>
         </>

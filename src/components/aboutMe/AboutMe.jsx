@@ -106,6 +106,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '1.4rem',
         fontFamily: "Consolas",
         marginRight: '4px',
+        fontWeight: 'bold',
         "@media (max-width: 1450px)": {
             fontSize: '1.4rem',
         },
