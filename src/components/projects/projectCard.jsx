@@ -187,11 +187,11 @@ const useStyles = makeStyles((theme) => ({
     btn1: {
         fontFamily: 'Montserrat !important',
         fontWeight: "bold !important",
+        marginLeft: '15px !important',
     },
     btn2: {
         fontFamily: 'Montserrat !important',
         fontWeight: "bold !important",
-        marginRight: '15px !important',
     },
     highlighted: {
         color: theme.palette.primary.main,
@@ -221,11 +221,18 @@ export default function ProjectCard({image, name, desc, git, web}) {
                                 <GitHubIcon />
                             </Button>
                         </CustomTooltip>
-                        <CustomTooltip title="Go to the project!" placement="top">
-                            <Button className={classes.btn1} onClick={() => {window.open(web, "_blank")}} variant="contained">
-                                <LinkIcon />
-                            </Button>
-                        </CustomTooltip>
+
+                        {web !== ""
+                            ? <CustomTooltip title="Go to the project!" placement="top">
+                                    <Button className={classes.btn1} onClick={() => {window.open(web, "_blank")}} variant="contained">
+                                        <LinkIcon />
+                                    </Button>
+                                </CustomTooltip>
+                            : null
+                        
+                        }
+
+
                     </div>
 
                 </div>

@@ -2,6 +2,7 @@ import React from 'react';
 import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
 import portfolio from "../../media/portfolio.svg";
+import chatbot from "../../media/icons/chatbot.svg";
 import ProjectCard from "./projectCard";
 
 
@@ -102,11 +103,11 @@ export default function Projects() {
                     <div className={classes.projects}>
                         <FadeInSection waitingTime={1500}>
                             <ProjectCard
-                                image={portfolio}
+                                image={chatbot}
                                 name={"Chatbot"}
                                 desc={<>A personal <span className={classes.highlighted}>RESTful API</span> developed with <span className={classes.highlighted}>Python</span>, <span className={classes.highlighted}>SpaCy</span> and <span className={classes.highlighted}>FastAPI</span> using <span className={classes.highlighted}>CI/CD</span> with <span className={classes.highlighted}>GitHub</span> and <span className={classes.highlighted}>Heroku</span>.</>}
                                 git={"https://github.com/hugo-degrossi/personal-chatbot"}
-                                web={"https://hugo-degrossi.fr/"}
+                                web={""}
                             />
                         </FadeInSection>
                         <FadeInSection waitingTime={1500}>
