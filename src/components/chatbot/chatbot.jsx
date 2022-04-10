@@ -5,6 +5,7 @@ import Fab from '@mui/material/Fab';
 import {ForumRounded, CloseRounded} from '@mui/icons-material';
 import { Card, CircularProgress, LinearProgress } from '@mui/material';
 import { CssTextFieldNormal } from '../utils/CssTextField';
+import { CustomTooltip } from "../utils/customComponents";
 import { Box } from '@mui/system';
 
 const API_URL_MESSAGE = "https://hugodegrossi-chatbot.herokuapp.com/message/"
@@ -238,18 +239,24 @@ function Chatbot() {
                         ? <FadeInSection waitingTime={3000}>
 
                             {isConnected 
-                                ? <Fab color='primary' size='medium' onClick={handleActiveChange}>
-                                <ForumRounded />
-                            </Fab>
-                                : <Fab color='primary' size='medium' onClick={handleActiveChange}>
-                                <CircularProgress className={classes.circular_progess} />
-                            </Fab>
+                                ? <CustomTooltip title="Chatbot" placement="left">
+                                    <Fab color='primary' size='medium' onClick={handleActiveChange}>
+                                        <ForumRounded />
+                                    </Fab>
+                                </CustomTooltip>
+                                : <CustomTooltip title="Chatbot is loading" placement="left">
+                                    <Fab color='primary' size='medium' onClick={handleActiveChange} disabled={true}>
+                                        <CircularProgress className={classes.circular_progess} />
+                                    </Fab>
+                                </CustomTooltip>
                             }
 
                     </ FadeInSection>
-                        : <Fab color='primary' size='medium' onClick={handleActiveChange}>
+                        : <CustomTooltip title="Chatbot" placement="left">
+                        <Fab color='primary' size='medium' onClick={handleActiveChange}>
                             <ForumRounded />
                         </Fab>
+                    </CustomTooltip>
                     }
                 </div>)
             }
