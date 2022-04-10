@@ -141,7 +141,7 @@ function Chatbot() {
                 jsonPromise.then(value => {
                     answer = value['answer']
                     setMessages([...messages, {'sender': 'chatbot','message': answer}])
-                    setIsActive(true)
+                    setIsConnected(true)
                 })
             })
             .catch(function() {
