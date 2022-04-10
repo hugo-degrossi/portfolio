@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@mui/styles';
 import FadeInSection from "../../components/fadeInSection";
 import Fab from '@mui/material/Fab';
 import {ForumRounded, CloseRounded} from '@mui/icons-material';
-import { Card, LinearProgress } from '@mui/material';
-import { CssTextField } from '../utils/CssTextField';
+import { Card, CircularProgress, LinearProgress } from '@mui/material';
+import { CssTextFieldNormal } from '../utils/CssTextField';
 import { Box } from '@mui/system';
+
+const API_URL_MESSAGE = "https://hugodegrossi-chatbot.herokuapp.com/message/"
+const API_URL_CONNECT = "https://hugodegrossi-chatbot.herokuapp.com/alive/"
 
 const useStyles = makeStyles((theme) => ({
     container:{
+        zIndex: 5,
         position: 'fixed',
         right: '50px',
         bottom: '50px',
@@ -57,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
         maskImage: "linear-gradient(to bottom,rgba(0, 0, 0, 0) 10px,rgba(0, 0, 0, 1) 40%);"
     },
     user_chat:{
+        borderRadius: '10px 0 0 10px',
         position: 'relative',
         marginTop: '25px',
         padding: '10px',
@@ -68,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
         borderRightColor: theme.palette.primary.main,
     },
     chatbot_chat:{
+        borderRadius: ' 0 10px 10px 0',
         position: 'relative',
         marginTop: '25px',
         padding: '10px',
@@ -85,7 +91,11 @@ const useStyles = makeStyles((theme) => ({
         top: '-19px',
     },
     progess:{
+        marginBottom: '5px',
         backgroundColor: 'transparent !important'
+    },
+    circular_progess:{
+        color: theme.palette.background.default + ' !important'
     }
 }));
 
@@ -96,6 +106,7 @@ function Chatbot() {
     const [isFirstLoad, setIsFirstLoad] = useState(true)
     const [textField, setTextField] = useState("")
     const [chatBotChatting, setChatBotChatting] = useState(false)
+    const [isConnected, setIsConnected] = useState(false)
     const [messages, setMessages] = useState([])
 
     const handleActiveChange = () => {
@@ -114,12 +125,42 @@ function Chatbot() {
         }
     }
 
+
+    const chatbotConnect = () => {
+        setTimeout(async () => {
+            let answer = "Error."
+
+            await fetch(API_URL_CONNECT, {
+                method: 'GET',
+                headers: {
+                    "Access-Control-Allow-Origin": '*'
+                }
+            })
+            .then((response) => {
+                const jsonPromise = response.json()
+                jsonPromise.then(value => {
+                    answer = value['answer']
+                    setMessages([...messages, {'sender': 'chatbot','message': answer}])
+                    setIsActive(true)
+                })
+            })
+            .catch(function() {
+                setMessages([...messages, {'sender': 'chatbot','message': answer}])
+            });
+        })
+    }
+
     const chatbotCall = (msg) => {
+
+        // if contain only spaces
+        if (!msg.replace(/\s/g, '').length) {
+            return
+        }
 
         setTimeout(async () => {
             setChatBotChatting(true)
             let answer = "Sorry, I couldn't answer."
-            await fetch(API_URL, {
+            await fetch(API_URL_MESSAGE, {
                 method: 'GET',
                 headers: {
                     "MESSAGE-TEXT": msg.toLowerCase(),
@@ -135,13 +176,18 @@ function Chatbot() {
             })
             .catch(function() {
                 setMessages([...messages, {'sender': 'you','message': msg}, {'sender': 'chatbot','message': answer}])
-            
             });
 
             setChatBotChatting(false)
         }, 1);
 
     }
+
+
+
+    useEffect(() => {
+        chatbotConnect()
+    }, [])
 
 
     return (
@@ -177,7 +223,7 @@ function Chatbot() {
                         }
                   
                                 
-                        <CssTextField label="Write your message" fullWidth name="user_name" value={textField} onChange={handleTextChange} onKeyPress={handleKeyPress}
+                        <CssTextFieldNormal label="Write your message" fullWidth name="user_name" value={textField} onChange={handleTextChange} onKeyPress={handleKeyPress}
                                     InputLabelProps={{className: classes.label,}}
                         />
                     </ div>
@@ -187,11 +233,19 @@ function Chatbot() {
                 </Card>)
                 : (
                     <div className={classes.button_container}>
+
                     {isFirstLoad
                         ? <FadeInSection waitingTime={3000}>
-                        <Fab color='primary' size='medium' onClick={handleActiveChange}>
-                            <ForumRounded />
-                        </Fab>
+
+                            {isConnected 
+                                ? <Fab color='primary' size='medium' onClick={handleActiveChange}>
+                                <ForumRounded />
+                            </Fab>
+                                : <Fab color='primary' size='medium' onClick={handleActiveChange}>
+                                <CircularProgress className={classes.circular_progess} />
+                            </Fab>
+                            }
+
                     </ FadeInSection>
                         : <Fab color='primary' size='medium' onClick={handleActiveChange}>
                             <ForumRounded />
@@ -205,5 +259,3 @@ function Chatbot() {
 
 export default Chatbot;
 
-
-const API_URL = "https://hugodegrossi-chatbot.herokuapp.com/message/"

@@ -2,7 +2,7 @@ import React from 'react';
 import {makeStyles } from '@mui/styles';
 import FadeInSection from "../fadeInSection";
 import portfolio from "../../media/portfolio.svg";
-import chatbot from "../../media/icons/chatbot.svg";
+import chatbot from "../../media/chatbot_animated.svg";
 import ProjectCard from "./projectCard";
 
 
