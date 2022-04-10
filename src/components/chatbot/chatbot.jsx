@@ -223,7 +223,7 @@ function Chatbot() {
                         }
                   
                                 
-                        <CssTextFieldNormal label="Write your message" fullWidth name="user_name" value={textField} onChange={handleTextChange} onKeyPress={handleKeyPress}
+                        <CssTextFieldNormal label="Write your message" fullWidth value={textField} onChange={handleTextChange} onKeyPress={handleKeyPress}
                                     InputLabelProps={{className: classes.label,}}
                         />
                     </ div>
