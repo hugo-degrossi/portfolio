@@ -166,7 +166,7 @@ function Hello() {
             </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 400}>
             <div className={classes.title}>
-                Computer Science Student.
+                Information Technology Student.
             </div>
             </ FadeInSection>
             <FadeInSection waitingTime={baseTimer + 500}>
